@@ -1,6 +1,6 @@
 # Ibrahim Awad
 
-**Computer Science Engineering Student** · Backend Development · Embedded Systems · Databases  
+**Computer Science Engineering Student** · FullStack Development · Embedded Systems · Databases  
 📍 Stockholm, Sweden · Open to internships and junior positions  
 📧 [ibrahimawad98@hotmail.com](mailto:ibrahimawad98@hotmail.com) · [LinkedIn](https://www.linkedin.com/in/ibrahim-awad-31a73a2aa)
 
