@@ -1,7 +1,7 @@
 <img src="https://capsule-render.vercel.app/api?type=blur&color=0:1e3a8a,50:9333ea,100:06b6d4&height=220&section=header&text=Ibrahim%20Awad&fontSize=55&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Fullstack%20Developer&descAlignY=65&descSize=18" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=650&lines=Fullstack+Development;Backend+%26+Frontend;Embedded+Systems;Building+Real-world+Projects" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=650&lines=Fullstack+Development;Backend+%26+Frontend;Embedded+Systems;Databases;Building+Real-world+Projects" />
 </p>
 
 ---
