@@ -1,13 +1,13 @@
 <h1 align="center">Ibrahim Awad</h1>
 <p align="center">
-Computer Science Engineer • Backend • Data
+Computer Science Engineer • Backend • Frontend
 </p>
 
 ---
 
 ## 👤 About Me
 - 📍 Stockholm  
-- 💻 Passion for backend systems & data engineering  
+- 💻 Passion for backend/Frontend systems & data engineering  
 - 🚀 Building real-world projects  
 
 ---
@@ -45,7 +45,7 @@ Computer Science Engineer • Backend • Data
 
 ## 📫 Contact
 - 📧 ibrahimawad98@hotmail.com  
-- 🔗 https://www.linkedin.com/in/ibrahim-awad-31a73a2aa  
+- [![LinkedIn](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/ibrahim-awad-31a73a2aa) 
 
 ---
 
