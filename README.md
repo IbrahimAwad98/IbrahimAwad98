@@ -52,9 +52,8 @@ Through my projects, I focus on writing clean code, understanding systems end-to
 ## Contribution Graph
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=tokyo-night&hide_border=true&area=true" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=react-dark&hide_border=true&bg_color=020617&color=22d3ee&line=9333ea&point=ffffff&area=true" />
 </p>
-
 ---
 
 ## 📌 Featured Projects
