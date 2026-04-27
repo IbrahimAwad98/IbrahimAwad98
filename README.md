@@ -6,21 +6,14 @@
 
 ---
 
-## 👋 About Me
+## About Me
 
-I'm a computer science engineer with a strong passion for building efficient, scalable, and reliable systems.  
-I enjoy solving complex problems and turning ideas into practical real-world applications.
-
-I have experience working with **C, C#, Python, databases, data visualization, and backend development**.  
-My projects include multiplayer systems, data processing tools, dashboards, and programming labs.
-
-Currently, I’m focused on improving my skills in **backend architecture, DevOps, software design, and data-driven applications**.
-
+I'm a computer science Student with a strong passion for building efficient, scalable, and reliable systems.  
 > Always learning, always building.
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=c,cs,python,html,css,js,mysql,mongodb,git,github,vscode" />
@@ -28,7 +21,7 @@ Currently, I’m focused on improving my skills in **backend architecture, DevOp
 
 ---
 
-## 🧠 Focus Areas
+## Focus Areas
 
 <p align="center">
   <img src="https://img.shields.io/badge/Backend-Development-blue?style=for-the-badge" />
@@ -39,7 +32,7 @@ Currently, I’m focused on improving my skills in **backend architecture, DevOp
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=IbrahimAwad98&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="170"/>
@@ -52,7 +45,7 @@ Currently, I’m focused on improving my skills in **backend architecture, DevOp
 
 ---
 
-## 🔥 Contribution Graph
+## Contribution Graph
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=tokyo-night&hide_border=true&area=true" />
@@ -73,7 +66,7 @@ Currently, I’m focused on improving my skills in **backend architecture, DevOp
 
 ---
 
-## 📫 Let's Connect
+## Contact Me
 
 <p align="center">
   <a href="mailto:ibrahimawad98@hotmail.com">
@@ -90,7 +83,3 @@ Currently, I’m focused on improving my skills in **backend architecture, DevOp
 </p>
 
 ---
-
-<p align="center">
-  <b>Building, learning, and improving one project at a time.</b>
-</p>
