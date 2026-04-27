@@ -87,7 +87,3 @@ Modern web application with API integration and responsive UI.
     <img src="https://img.shields.io/badge/LinkedIn-Ibrahim%20Awad-blue?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
 </p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=IbrahimAwad98&style=for-the-badge&color=blue" />
-</p>
