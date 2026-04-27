@@ -1,34 +1,34 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:2563eb,100:7c3aed&height=220&section=header&text=Ibrahim%20Awad&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Backend%20Developer%20%E2%80%A2%20Systems%20Programming%20%E2%80%A2%20Data%20Engineering&descAlignY=55&descSize=18" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:2563eb,100:7c3aed&height=220&section=header&text=Ibrahim%20Awad&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Fullstack%20Developer%20%E2%80%A2%20Computer%20Science%20Student&descAlignY=55&descSize=18" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=700&lines=Backend+Engineering;Systems+Programming;Data+Engineering;Building+Real-world+Projects" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=700&lines=Fullstack+Development;Backend+%26+Frontend;Embedded+Systems;Building+Real-world+Projects" />
 </p>
 
 ---
 
-## 👋 About Me
+##  About Me
 
-I’m a computer science engineer focused on building **efficient, scalable, and real-world systems**.
+I’m a computer science engineering student with a strong interest in **fullstack development and system design**.
 
-I work across multiple layers of the stack — from **low-level embedded programming (RISC-V, C)** to **backend systems, databases, and modern web applications**.
+I enjoy building complete applications — from **low-level embedded systems (RISC-V, C)** to **backend services, databases, and modern frontend interfaces**.
 
-I enjoy solving complex problems, designing clean architectures, and turning ideas into working systems.
+Through my projects, I focus on writing clean code, understanding how systems work end-to-end, and solving real-world problems.
 
-**Current focus:** Backend development · Systems programming · DevOps
-
----
-
-## ⚡ What I’ve Built
-
-- 🚗 Multiplayer **UDP racing game in C (SDL2)** — real-time networking, client-server architecture, 6-person SCRUM team  
-- 📚 Two full **library systems (MySQL & MongoDB)** — MVC architecture, async UI, authentication, search & reviews  
-- 🔢 Implemented **data structures & algorithms from scratch** — BST, sorting, BFS, backtracking  
-- 🔬 **Embedded systems (RISC-V)** — GPIO, interrupts, ADC, SPI, UART on real hardware  
-- 🌐 Modern web apps using **React / Next.js / TypeScript / Tailwind**
+**Current focus:** Fullstack development · Databases
 
 ---
 
-## 🚀 Tech Stack
+## What I’ve Built
+
+- Multiplayer **UDP racing game in C (SDL2)** — client-server architecture, real-time networking, SCRUM team  
+- Two full **library systems (MySQL & MongoDB)** — MVC architecture, authentication, search & reviews  
+- Implemented **data structures & algorithms from scratch** — BST, sorting, BFS, backtracking  
+- **Embedded systems (RISC-V)** — GPIO, interrupts, ADC, SPI, UART  
+- Web apps with **React / Next.js / TypeScript / Tailwind CSS**
+
+---
+
+## Tech Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=c,cs,java,python,ts,js,react,nextjs,mysql,mongodb,git,github,vscode" />
@@ -36,7 +36,7 @@ I enjoy solving complex problems, designing clean architectures, and turning ide
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=IbrahimAwad98&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="170"/>
@@ -49,7 +49,7 @@ I enjoy solving complex problems, designing clean architectures, and turning ide
 
 ---
 
-## 🔥 Contribution Graph
+## Contribution Graph
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=tokyo-night&hide_border=true&area=true" />
@@ -60,23 +60,23 @@ I enjoy solving complex problems, designing clean architectures, and turning ide
 ## 📌 Featured Projects
 
 ### 🚗 Road Rumble — *C · SDL2 · Networking*
-Multiplayer racing game with real-time UDP communication, collision system, split-screen rendering, and cross-platform build setup.
+Multiplayer racing game with real-time UDP communication and cross-platform support.
 
-### 📚 Library System (MongoDB & MySQL) — *Java · JavaFX*
-Full MVC applications with authentication, advanced search, rating system, and async UI handling.
+### 📚 Library System — *Java · JavaFX · MySQL / MongoDB*
+Full MVC applications with authentication, search, and rating system.
 
 ### 🔢 Algorithms & Data Structures — *Java*
-Complete implementations of core data structures and algorithms without external libraries.
+Core implementations of data structures and algorithms from scratch.
 
-### 🔬 RISC-V Embedded Programming — *C · Assembly*
-Low-level hardware programming including interrupts, peripherals, and communication protocols.
+### 🔬 RISC-V Programming — *C · Assembly*
+Low-level programming on microcontrollers with peripherals and interrupts.
 
 ### 🌐 Weather App — *Next.js · React · TypeScript*
-Modern web app using server-side rendering and clean UI with Tailwind.
+Modern web application with API integration and responsive UI.
 
 ---
 
-## 📫 Let's Connect
+## Contact Me
 
 <p align="center">
   <a href="mailto:ibrahimawad98@hotmail.com">
@@ -93,7 +93,3 @@ Modern web app using server-side rendering and clean UI with Tailwind.
 </p>
 
 ---
-
-<p align="center">
-  <b>Building systems that actually work.</b>
-</p>
