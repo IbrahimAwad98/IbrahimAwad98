@@ -1,34 +1,55 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:2563eb,100:7c3aed&height=220&section=header&text=Ibrahim%20Awad&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Computer%20Science%20Engineer%20%E2%80%A2%20Backend%20Developer%20%E2%80%A2%20Data%20Engineer&descAlignY=55&descSize=18" />
+# Ibrahim Awad
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=700&lines=Backend+Development;Data+Engineering;DevOps+%26+Automation;Building+Real-world+Projects" />
-</p>
+**Computer Science Engineering Student** · FullStack Development · Embedded Systems · Databases  
+📍 Stockholm, Sweden · Open to internships and junior positions  
+📧 [ibrahimawad98@hotmail.com](mailto:ibrahimawad98@hotmail.com) · [LinkedIn](https://www.linkedin.com/in/ibrahim-awad-31a73a2aa)
 
 ---
 
 ## About Me
 
-I'm a computer science Student with a strong passion for building efficient, scalable, and reliable systems.  
-> Always learning, always building.
+I am a computer science engineering student with hands-on experience across the full stack — from RISC-V assembly and embedded C to MongoDB/MySQL backends, JavaFX desktop applications, and React/Next.js frontends. I enjoy building projects that span multiple layers of the stack and am particularly interested in backend development, databases, and systems programming.
+
+- 🚗 Built a **UDP multiplayer racing game** in C with SDL2 — 6-person team, cross-platform, client-server architecture
+- 📚 Developed **two library management apps** in Java (one with MySQL, one with MongoDB) following MVC principles
+- 🔢 Implemented **classical data structures & algorithms** from scratch in Java: BST, QuickSort, MergeSort, backtracking, BFS
+- 🔬 Programmed **RISC-V microcontrollers** (GD32VF103) in assembly and C — GPIO, USART, DAC, PWM, SPI, and interrupts
+- 🌐 Built web apps with **React 19 / Next.js 16 / TypeScript / Tailwind CSS**
 
 ---
 
 ## Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cs,python,html,css,js,mysql,mongodb,git,github,vscode" />
+  <img src="https://skillicons.dev/icons?i=c,cs,java,python,ts,js,react,mysql,mongodb,git,github,vscode" />
 </p>
+
+**Languages:** C · Java · Python · TypeScript · JavaScript · C# · MATLAB · RISC-V Assembly · VHDL · SQL  
+**Frameworks / Libraries:** React · Next.js · JavaFX · SDL2 · libGDX  
+**Databases:** MySQL · MongoDB  
+**Tools:** Git · Maven · Gradle · Make · Power BI · Cisco Packet Tracer
 
 ---
 
-## Focus Areas
+## 📌 Featured Projects
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Backend-Development-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Data-Engineering-purple?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/DevOps-Learning-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Problem-Solving-orange?style=for-the-badge" />
-</p>
+### 🚗 [Road Rumble](https://github.com/IbrahimAwad98/Road-Rumble) — C · SDL2 · UDP Networking
+Multiplayer 2D top-down racing game with a separate server and client binary, supporting up to 4 simultaneous players over UDP. Features split-screen gameplay, collision detection, lap tracking, tile-based rendering, and cross-platform Makefiles (Linux / macOS / Windows). Built as a 6-person group project managed with SCRUM.
+
+### 📚 [Library Management — MongoDB](https://github.com/IbrahimAwad98/LibraryMongoDB) — Java 21 · JavaFX · MongoDB
+Desktop library system built on full MVC architecture. Supports user authentication, multi-criteria book search (title, ISBN, author, genre, rating), text reviews, 1–10 ratings with automatic average calculation, and async UI updates via JavaFX `Task`. Built at KTH as part of the Database Engineering course.
+
+### 📚 [Library Management — MySQL](https://github.com/IbrahimAwad98/LibraryMySQL) — Java 21 · JavaFX · MySQL
+Relational counterpart to LibraryMongoDB — demonstrates SQL schema design, JDBC integration, and MVC architecture alongside the NoSQL version for direct SQL vs NoSQL comparison.
+
+### 🔢 [Algorithms & Data Structures](https://github.com/IbrahimAwad98/Algorithms-and-data-structure) — Java
+From-scratch implementations of Stack (3 variants), Queue, Linked List (singly & doubly), Binary Search Tree, QuickSort, MergeSort, ShellSort, backtracking maze solver, BFS brick-puzzle solver, and a postfix/infix expression evaluator. No external libraries.
+
+### 🔬 [RISC-V Embedded Programming](https://github.com/IbrahimAwad98/RISC-V-) — RISC-V Assembly · C
+Five progressive lab assignments on the GD32VF103 (Longan Nano) microcontroller. Covers ALU operations, GPIO bit manipulation, DAC/PWM control, buffered USART serial communication, SPI LCD driving, ADC sampling, and ECLIC vectored interrupt handling.
+
+### 🌤️ [Weather App](https://github.com/IbrahimAwad98/Weather-App-via-React) — Next.js 16 · React 19 · TypeScript · Tailwind CSS
+Real-time weather dashboard using the App Router pattern, server-side API integration, and responsive styling with Tailwind CSS v4.
 
 ---
 
@@ -39,40 +60,15 @@ I'm a computer science Student with a strong passion for building efficient, sca
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimAwad98&layout=compact&theme=tokyonight&hide_border=true" height="170"/>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IbrahimAwad98&theme=tokyonight&hide_border=true" />
-</p>
-
 ---
 
-## Contribution Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=tokyo-night&hide_border=true&area=true" />
-</p>
-
----
-
-## 📌 Featured Projects
-
-| Project | Description | Tech |
-|---|---|---|
-| 🚗 **Road Rumble** | Multiplayer car game with client-server architecture | C, SDL2, Networking |
-| ⚙️ **DevOps CSV to JSON** | Python tool that converts CSV to JSON with data validation and web visualization | Python, JSON |
-| 📊 **Power BI Dashboard** | Business intelligence dashboard for data analysis and visualization | Power BI |
-| 💻 **C Algorithms & DS** | Collection of algorithms, data structures, and programming labs | C |
-| 🌐 **Web Development** | Frontend projects and HTML/CSS exercises | HTML, CSS, JavaScript |
-| 🧮 **Mathlab** | Mathematical scripts for algebra, calculus, and visualization | MATLAB |
-
----
-
-## Contact Me
+## Contact
 
 <p align="center">
   <a href="mailto:ibrahimawad98@hotmail.com">
     <img src="https://img.shields.io/badge/Email-ibrahimawad98%40hotmail.com-red?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  
+  &nbsp;
   <a href="https://www.linkedin.com/in/ibrahim-awad-31a73a2aa">
     <img src="https://img.shields.io/badge/LinkedIn-Ibrahim%20Awad-blue?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
@@ -81,5 +77,3 @@ I'm a computer science Student with a strong passion for building efficient, sca
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=IbrahimAwad98&style=for-the-badge&color=blue" />
 </p>
-
----
