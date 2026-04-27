@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:2563eb,100:7c3aed&height=200&section=header&text=Ibrahim%20Awad&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Fullstack%20Developer%20%E2%80%A2%20Computer%20Science%20Student&descAlignY=60&descSize=16" />
+<img src="https://capsule-render.vercel.app/api?type=blur&color=0:1e3a8a,50:9333ea,100:06b6d4&height=220&section=header&text=Ibrahim%20Awad&fontSize=55&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Fullstack%20Developer&descAlignY=65&descSize=18" />
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=700&lines=Fullstack+Development;Backend+%26+Frontend;Embedded+Systems;Building+Real-world+Projects" />
