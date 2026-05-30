@@ -36,26 +36,6 @@ Through my projects, I focus on writing clean code, understanding systems end-to
 
 ---
 
-## GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=IbrahimAwad98&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimAwad98&layout=compact&theme=tokyonight&hide_border=true" height="170"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=IbrahimAwad98&theme=tokyonight&hide_border=true" />
-</p>
-
----
-
-## Contribution Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=IbrahimAwad98&theme=tokyo-night&hide_border=true&bg_color=0f172a&color=38bdf8&line=6366f1&point=ffffff&area=true&area_color=6366f1" />
-</p>
----
-
 ## 📌 Featured Projects
 
 ### Road Rumble — *C · SDL2 · Networking*
