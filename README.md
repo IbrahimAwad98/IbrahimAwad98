@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=900&center=true&vCenter=true&width=700&color=06B6D4&lines=Fullstack+Development;Backend+%26+Frontend+Engineering;Systems+Programming+in+Rust+%26+C;Embedded+Systems+%C2%B7+RISC-V;Databases+%26+System+Design;Building+Real-world+Projects" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=900&center=true&vCenter=true&width=700&color=06B6D4&lines=Fullstack+Development;Backend+%26+Frontend+Engineering;Systems+Programming+in+Rust+%26+C;Embedded+Systems+%C2%B7+RISC-V;Databases+%26+System+Design;AI-Assisted+Development+Workflow;Building+Real-world+Projects" />
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3a8a,50:9333ea,100:06b6d4&height=3&section=header" width="100%" />
@@ -26,18 +26,20 @@ Through my projects I focus on writing clean code, understanding systems end-to-
 
 ```rust
 struct Developer {
-    name:    &'static str,
-    role:    &'static str,
-    focus:   [&'static str; 3],
-    open_to: &'static str,
+    name:      &'static str,
+    role:      &'static str,
+    focus:     [&'static str; 3],
+    ai_stack:  [&'static str; 3],
+    open_to:   &'static str,
 }
 
 fn main() {
     let me = Developer {
-        name:    "Ibrahim Awad",
-        role:    "Fullstack Developer",
-        focus:   ["Fullstack", "Databases", "Rust & Systems"],
-        open_to: "Internships · Thesis projects · Collaboration",
+        name:     "Ibrahim Awad",
+        role:     "Fullstack Developer",
+        focus:    ["Fullstack", "Databases", "Rust & Systems"],
+        ai_stack: ["Claude", "Gemini", "Codex"],
+        open_to:  "Internships · Thesis projects · Collaboration",
     };
 
     println!("Let's build something solid. 🦀");
@@ -75,6 +77,41 @@ fn main() {
   <img src="https://img.shields.io/badge/RISC--V-283272?style=flat-square&logo=riscv&logoColor=white" />
   <img src="https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=jira&logoColor=white" />
 </p>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3a8a,50:9333ea,100:06b6d4&height=3&section=header" width="100%" />
+
+## 🤖 AI-Assisted Development
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white" />
+  <img src="https://img.shields.io/badge/Codex-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" />
+</p>
+
+AI is part of my toolchain, not a replacement for understanding the system. I use it to move faster while staying accountable for every line that ships.
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>🧠 Architecture &amp; Review</h4>
+      <p><em>Claude</em></p>
+      <p>Design discussions, refactoring across larger codebases, and critical review of my own solutions before they land.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h4>🔍 Research &amp; Docs</h4>
+      <p><em>Gemini</em></p>
+      <p>Exploring unfamiliar APIs and specs, comparing approaches, and turning working code into readable documentation.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h4>⚡ Scaffolding &amp; Tests</h4>
+      <p><em>Codex · Copilot</em></p>
+      <p>Boilerplate, test coverage and rapid prototyping — so the time goes into the parts that actually require thinking.</p>
+    </td>
+  </tr>
+</table>
+
+> **Principle:** every AI-generated suggestion gets read, questioned and tested before it enters a project. The value is speed of iteration — not skipping the engineering.
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3a8a,50:9333ea,100:06b6d4&height=3&section=header" width="100%" />
 
@@ -173,6 +210,7 @@ fn main() {
   <img src="https://img.shields.io/badge/🦀%20Rust%20%26%20Systems%20Programming-000000?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Fullstack%20Development-1E3A8A?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Databases%20%26%20System%20Design-9333EA?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AI--Assisted%20Engineering-06B6D4?style=for-the-badge" />
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e3a8a,50:9333ea,100:06b6d4&height=3&section=header" width="100%" />
