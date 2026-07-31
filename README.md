@@ -191,12 +191,11 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 ## GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=IbrahimAwad98&show_icons=true&hide_border=true&bg_color=0D1117&title_color=9333EA&icon_color=06B6D4&text_color=C9D1D9" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=IbrahimAwad98&layout=compact&hide_border=true&bg_color=0D1117&title_color=9333EA&text_color=C9D1D9&langs_count=8" alt="Top languages" />
+  <img src="./assets/stats.svg" alt="GitHub statistics" width="880" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=IbrahimAwad98&hide_border=true&background=0D1117&ring=9333EA&fire=06B6D4&currStreakLabel=06B6D4&sideLabels=C9D1D9&dates=8B949E&stroke=9333EA" alt="Contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=IbrahimAwad98&hide_border=true&background=0D1117&ring=9333EA&fire=06B6D4&currStreakLabel=06B6D4&sideLabels=C9D1D9&dates=8B949E&stroke=9333EA&sideNums=C9D1D9&currStreakNum=C9D1D9" alt="Contribution streak" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
