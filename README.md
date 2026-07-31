@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/typing.svg" alt="Fullstack Development · Backend &amp; Frontend Engineering · Systems Programming in Rust &amp; C · Embedded Systems · Databases · AI-Assisted Development" />
+  <img src="./assets/typing.svg" alt="Fullstack Development · Backend &amp; Frontend Engineering · Systems Programming in C · Embedded Systems · RISC-V · Databases &amp; System Design · Currently Learning Rust · AI-Assisted Development Workflow" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
@@ -150,13 +150,13 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🗄️ <a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
-      <p><em>MySQL · ER Modeling</em></p>
-      <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
+      <h3>📚 Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
+      <p><em>Java · JavaFX · MySQL / MongoDB</em></p>
+      <p>Library management client built twice — against MySQL with prepared statements and against MongoDB — same MVC architecture with an interface-driven data layer, login, search, reviews and ratings.</p>
       <p>
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-        <img src="https://img.shields.io/badge/SQL-1E3A8A?style=flat-square" alt="SQL" />
-        <img src="https://img.shields.io/badge/ER%20Diagram-9333EA?style=flat-square" alt="ER Diagram" />
+        <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
       </p>
     </td>
     <td width="50%" valign="top">
@@ -172,23 +172,22 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>♠️ <a href="https://github.com/IbrahimAwad98/poker-squares">Poker Squares</a></h3>
+      <h3>🧠 <a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
       <p><em>Java</em></p>
-      <p>Card game with clean model/UI separation — reusable deck and pile utilities plus poker-hand evaluation and scoring on a 5×5 grid.</p>
+      <p>Data structures and algorithms implemented from scratch — generic BST, linked lists, stacks and queues, sorting, and backtracking solvers for mazes and N-Queens.</p>
       <p>
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-        <img src="https://img.shields.io/badge/OOP-9333EA?style=flat-square" alt="OOP" />
-        <img src="https://img.shields.io/badge/MVC-1E3A8A?style=flat-square" alt="MVC" />
+        <img src="https://img.shields.io/badge/DSA-9333EA?style=flat-square" alt="DSA" />
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🧪 <a href="https://github.com/IbrahimAwad98/MSW-mini-test">API Testing</a> &amp; <a href="https://github.com/IbrahimAwad98/Tower-of-Hanoi">Recursion</a></h3>
-      <p><em>JavaScript · Vitest · Java</em></p>
-      <p>Two focused exercises: API mocking with Mock Service Worker and Vitest, and a playable Tower of Hanoi built on classic recursion.</p>
+      <h3>🗄️ <a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
+      <p><em>MySQL · ER Modeling</em></p>
+      <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
       <p>
-        <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Vitest" />
-        <img src="https://img.shields.io/badge/MSW-FF6A33?style=flat-square" alt="Mock Service Worker" />
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+        <img src="https://img.shields.io/badge/SQL-1E3A8A?style=flat-square" alt="SQL" />
+        <img src="https://img.shields.io/badge/ER%20Diagram-9333EA?style=flat-square" alt="ER Diagram" />
       </p>
     </td>
   </tr>
