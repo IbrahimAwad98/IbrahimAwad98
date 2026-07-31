@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Källa till SVG-filerna i denna mapp. Kör `python3 generate_assets.py`
-efter ändringar i färger eller texter.
+Genererar självhostade SVG-assets till GitHub-profilen.
+Kör: python3 generate_assets.py
+Skriver till ./assets/
 """
 import random
 from pathlib import Path
 
-OUT = Path(__file__).parent
+OUT = Path(__file__).parent / "assets"
 OUT.mkdir(exist_ok=True)
 
 C1, C2, C3 = "#1e3a8a", "#9333ea", "#06b6d4"
@@ -84,9 +85,10 @@ banner = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" widt
 LINES = [
     "Fullstack Development",
     "Backend & Frontend Engineering",
-    "Systems Programming in Rust & C",
+    "Systems Programming in C",
     "Embedded Systems \u00b7 RISC-V",
     "Databases & System Design",
+    "Currently Learning Rust",
     "AI-Assisted Development Workflow",
 ]
 PER = 3.0                      # sekunder per rad
