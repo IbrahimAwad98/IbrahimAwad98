@@ -22,7 +22,7 @@
 
 Computer science engineering student at **KTH Royal Institute of Technology**, based in Stockholm.
 
-I build complete systems — from **bare-metal embedded code (RISC-V, C)** and **systems programming in Rust**, up through **backend services and databases**, to **modern frontend interfaces**.
+I build complete systems — from **bare-metal embedded code (RISC-V, C)**, up through **backend services and databases**, to **modern frontend interfaces**.
 
 My focus is writing clean code, understanding systems end-to-end, and solving real problems rather than tutorial exercises.
 
@@ -128,7 +128,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🏎️ Road Rumble</h3>
+      <h3>🏎️ <a href="https://github.com/IbrahimAwad98/Road-Rumble">Road Rumble</a></h3>
       <p><em>C · SDL2 · UDP Networking</em></p>
       <p>Multiplayer racing game with real-time UDP client–server communication and cross-platform support. Built in a SCRUM team.</p>
       <p>
@@ -138,31 +138,31 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🦀 Rust Systems Projects</h3>
-      <p><em>Rust · Cargo</em></p>
-      <p>Systems-level tooling built to explore ownership, borrowing, traits and fearless concurrency — memory safety without a garbage collector.</p>
+      <h3>🌤️ <a href="https://github.com/IbrahimAwad98/Weather-App-via-React">Weather App</a></h3>
+      <p><em>Next.js · React · TypeScript</em></p>
+      <p>Weather application fetching live OpenWeatherMap data, with typed API responses, error handling and dark mode.</p>
       <p>
-        <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust" />
-        <img src="https://img.shields.io/badge/Concurrency-9333EA?style=flat-square" alt="Concurrency" />
-        <img src="https://img.shields.io/badge/CLI-1E3A8A?style=flat-square" alt="CLI" />
+        <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+        <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
       </p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>📚 Library Systems</h3>
-      <p><em>Java · JavaFX · MySQL / MongoDB</em></p>
-      <p>Full MVC applications with authentication, advanced search, reviews and ratings — implemented against both SQL and NoSQL backends.</p>
+      <h3>🗄️ <a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
+      <p><em>MySQL · ER Modeling</em></p>
+      <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
       <p>
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-        <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
+        <img src="https://img.shields.io/badge/SQL-1E3A8A?style=flat-square" alt="SQL" />
+        <img src="https://img.shields.io/badge/ER%20Diagram-9333EA?style=flat-square" alt="ER Diagram" />
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>⚙️ RISC-V Programming</h3>
+      <h3>⚙️ <a href="https://github.com/IbrahimAwad98/riscv-baremetal">RISC-V Bare-Metal</a></h3>
       <p><em>C · Assembly</em></p>
-      <p>Bare-metal programming on microcontrollers: GPIO, interrupts, ADC, SPI and UART drivers written from the register level up.</p>
+      <p>Bare-metal programming on the GD32VF103 microcontroller: GPIO, ADC, PWM, DAC and LCD drivers written from the register level up, plus RISC-V assembly labs.</p>
       <p>
         <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
         <img src="https://img.shields.io/badge/Assembly-525252?style=flat-square" alt="Assembly" />
@@ -172,22 +172,23 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🧠 Algorithms &amp; Data Structures</h3>
+      <h3>♠️ <a href="https://github.com/IbrahimAwad98/poker-squares">Poker Squares</a></h3>
       <p><em>Java</em></p>
-      <p>Core implementations written from scratch — BST, sorting algorithms, BFS/DFS and backtracking, with complexity analysis.</p>
+      <p>Card game with clean model/UI separation — reusable deck and pile utilities plus poker-hand evaluation and scoring on a 5×5 grid.</p>
       <p>
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-        <img src="https://img.shields.io/badge/DSA-9333EA?style=flat-square" alt="DSA" />
+        <img src="https://img.shields.io/badge/OOP-9333EA?style=flat-square" alt="OOP" />
+        <img src="https://img.shields.io/badge/MVC-1E3A8A?style=flat-square" alt="MVC" />
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🌤️ Weather App</h3>
-      <p><em>Next.js · React · TypeScript</em></p>
-      <p>Modern web application with external API integration, responsive UI and type-safe data handling.</p>
+      <h3>🧪 <a href="https://github.com/IbrahimAwad98/MSW-mini-test">API Testing</a> &amp; <a href="https://github.com/IbrahimAwad98/Tower-of-Hanoi">Recursion</a></h3>
+      <p><em>JavaScript · Vitest · Java</em></p>
+      <p>Two focused exercises: API mocking with Mock Service Worker and Vitest, and a playable Tower of Hanoi built on classic recursion.</p>
       <p>
-        <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
-        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+        <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Vitest" />
+        <img src="https://img.shields.io/badge/MSW-FF6A33?style=flat-square" alt="Mock Service Worker" />
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
       </p>
     </td>
   </tr>
