@@ -1,0 +1,41 @@
+name: Update stats card
+
+on:
+  schedule:
+    - cron: '17 4 * * *'      # varje dygn 04:17 UTC
+  workflow_dispatch:           # gör att du kan köra manuellt från Actions-fliken
+  push:
+    paths:
+      - 'assets/generate_stats.py'
+      - '.github/workflows/stats.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generera stats.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_USER: ${{ github.repository_owner }}
+        run: python3 assets/generate_stats.py
+
+      - name: Committa om något ändrats
+        run: |
+          if git diff --quiet assets/stats.svg; then
+            echo "Ingen förändring i statistiken."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg
+          git commit -m "chore: update stats card [skip ci]"
+          git push
