@@ -31,7 +31,7 @@ struct Developer {
     name:     &'static str,
     role:     &'static str,
     focus:    [&'static str; 3],
-    ai_stack: [&'static str; 3],
+    learning: &'static str,
     open_to:  &'static str,
 }
 
@@ -39,14 +39,39 @@ fn main() {
     let me = Developer {
         name:     "Ibrahim Awad",
         role:     "Fullstack Developer",
-        focus:    ["Fullstack", "Databases", "Rust & Systems"],
-        ai_stack: ["Claude", "Gemini", "Codex"],
-        open_to:  "Internships · Thesis projects · Collaboration",
+        focus:    ["Systems & Embedded", "Databases", "Web"],
+        learning: "Rust",
+        open_to:  "Graduate roles · Thesis projects · Collaboration",
     };
 
     println!("Let's build something solid. 🦀");
 }
 ```
+
+<img src="./assets/divider.svg" alt="" width="100%" />
+
+## Experience
+
+<table>
+  <tr>
+    <td valign="top" width="30%">
+      <b>Software Engineering Intern</b><br/>
+      <em>Sid Marketing</em><br/>
+      <sub>2026</sub>
+    </td>
+    <td valign="top" width="70%">
+      <p>Contributed to <b>Sid Platform</b>, a production billing and invoicing system, as part of a small engineering team working in a full code-review culture.</p>
+      <p>Shipped a customer-facing switchover flow that let organizations migrate their billing setup without support involvement, along with a Stripe-mode billing interface. Worked across the stack in an existing codebase — reading unfamiliar code, matching established patterns, and defending design decisions in review.</p>
+      <p>
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+        <img src="https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white" alt="Stripe" />
+        <img src="https://img.shields.io/badge/Code%20Review-06B6D4?style=flat-square" alt="Code review" />
+        <img src="https://img.shields.io/badge/Production%20Codebase-9333EA?style=flat-square" alt="Production codebase" />
+      </p>
+      <p><sub><i>Code is proprietary and not public.</i></sub></p>
+    </td>
+  </tr>
+</table>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
 
