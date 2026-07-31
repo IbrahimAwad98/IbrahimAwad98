@@ -84,9 +84,16 @@ fn main() {
 ## AI-Assisted Development
 
 <p align="center">
+  <sub><b>MODELS</b></sub><br/>
   <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
   <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
   <img src="https://img.shields.io/badge/Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="Codex" />
+</p>
+
+<p align="center">
+  <sub><b>ENVIRONMENTS</b></sub><br/>
+  <img src="https://img.shields.io/badge/Cursor-0A0A0A?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
+  <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code" />
   <img src="https://img.shields.io/badge/Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
 </p>
 
@@ -96,18 +103,18 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
   <tr>
     <td width="33%" valign="top">
       <h4>Architecture &amp; Review</h4>
-      <p><em>Claude</em></p>
+      <p><em>Claude · Claude Code</em></p>
       <p>Design discussions, refactoring across larger codebases, and critical review of my own solutions before they land.</p>
     </td>
     <td width="33%" valign="top">
-      <h4>Research &amp; Docs</h4>
-      <p><em>Gemini</em></p>
-      <p>Exploring unfamiliar APIs and specs, comparing approaches, and turning working code into readable documentation.</p>
+      <h4>In-Editor Flow</h4>
+      <p><em>Cursor · Copilot</em></p>
+      <p>Multi-file edits with the whole repo in context, inline completion, and fast iteration without leaving the editor.</p>
     </td>
     <td width="33%" valign="top">
-      <h4>Scaffolding &amp; Tests</h4>
-      <p><em>Codex · Copilot</em></p>
-      <p>Boilerplate, test coverage and rapid prototyping — so time goes into the parts that actually require thinking.</p>
+      <h4>Research &amp; Scaffolding</h4>
+      <p><em>Gemini · Codex</em></p>
+      <p>Exploring unfamiliar APIs and specs, generating boilerplate and test coverage — so time goes into the parts that require thinking.</p>
     </td>
   </tr>
 </table>
