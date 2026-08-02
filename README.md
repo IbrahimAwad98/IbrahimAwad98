@@ -236,6 +236,10 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 
 <img src="./assets/divider.svg" alt="" width="100%" />
 
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=IbrahimAwad98&theme=onedark&no-frame=true&no-bg=true&column=7&margin-w=8" alt="GitHub trophies" />
+</p>
+
 ## Current Focus
 
 <p align="center">
