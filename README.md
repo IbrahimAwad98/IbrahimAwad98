@@ -92,7 +92,7 @@ fn main() {
   </tr>
   <tr>
     <td><b>Cloud &amp; DevOps</b></td>
-    <td><img src="https://skillicons.dev/icons?i=azure,vercel,githubactions,git,github,gitlab&theme=dark" alt="Azure, Vercel, GitHub Actions, Git, GitHub, GitLab" /></td>
+    <td><img src="https://skillicons.dev/icons?i=docker,azure,vercel,githubactions,git,github,gitlab,linux&theme=dark" alt="Docker, Azure, Vercel, GitHub Actions, Git, GitHub, GitLab, Linux" /></td>
   </tr>
   <tr>
     <td><b>Testing &amp; Design</b></td>
@@ -106,6 +106,8 @@ fn main() {
   <img src="https://img.shields.io/badge/RISC--V-283272?style=flat-square&logo=riscv&logoColor=white" alt="RISC-V" />
   <img src="https://img.shields.io/badge/JavaFX-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="JavaFX" />
   <img src="https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square" alt="SCRUM" />
+  <img src="https://img.shields.io/badge/CI%2FCD-06B6D4?style=flat-square&logo=githubactions&logoColor=white" alt="CI/CD" />
+  <img src="https://img.shields.io/badge/DevOps-9333EA?style=flat-square" alt="DevOps" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
