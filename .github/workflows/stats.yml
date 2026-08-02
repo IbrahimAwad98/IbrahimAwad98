@@ -32,6 +32,7 @@ jobs:
         env:
           GH_GRAPHQL_TOKEN: ${{ secrets.PAT }}
           STATS_USER: ${{ github.repository_owner }}
+          ACTIVITY_DAYS: "365"
         run: python3 assets/generate_activity.py
 
       - name: Committa om något ändrats
