@@ -1,4 +1,4 @@
-<img src="./assets/header.png" alt="Ibrahim Awad — Fullstack Developer" width="100%" />
+<img src="./assets/header.svg" alt="Ibrahim Awad — Fullstack Developer" width="100%" />
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ibrahim-awad-31a73a2aa">
