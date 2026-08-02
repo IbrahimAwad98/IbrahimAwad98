@@ -1,38 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="880" height="210" role="img" aria-label="GitHub-statistik för IbrahimAwad98: 24 repositories, 1 stjärnor, 17 följare">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="880" height="210" role="img" aria-label="GitHub-statistik för IbrahimAwad98: 24 repositories, 1 stjärnor, 18 följare">
   <defs>
     <clipPath id="rounded"><rect x="300" y="70" width="520" height="14" rx="7"/></clipPath>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#9333EA"/><stop offset="100%" stop-color="#06B6D4"/>
+      <stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#22D3EE"/>
     </linearGradient>
   </defs>
 
-  <rect width="880" height="210" rx="10" fill="#0D1117" stroke="#21262D"/>
+  <rect width="880" height="210" rx="10" fill="#0B1020" stroke="#21262D"/>
   <rect x="0" y="0" width="880" height="3" rx="1.5" fill="url(#accent)"/>
 
   <text x="30" y="40" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600"
         fill="#C9D1D9" letter-spacing="0.4">IbrahimAwad98</text>
   <line x1="30" y1="52" x2="850" y2="52" stroke="#21262D"/>
 
-  <text x="46" y="78" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#06B6D4">24</text><text x="46" y="95" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">REPOSITORIES</text>
-  <text x="46" y="120" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#06B6D4">1</text><text x="46" y="137" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">TOTAL STARS</text>
-  <text x="46" y="162" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#06B6D4">17</text><text x="46" y="179" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">FOLLOWERS</text>
+  <text x="46" y="78" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#22D3EE">24</text><text x="46" y="95" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">REPOSITORIES</text>
+  <text x="46" y="120" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#22D3EE">1</text><text x="46" y="137" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">TOTAL STARS</text>
+  <text x="46" y="162" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#22D3EE">18</text><text x="46" y="179" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E" letter-spacing="0.6">FOLLOWERS</text>
 
   <line x1="265" y1="66" x2="265" y2="180" stroke="#21262D"/>
 
   <text x="300" y="60" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="#8B949E"
         letter-spacing="0.6">MOST USED LANGUAGES</text>
   <g clip-path="url(#rounded)">
-  <rect x="300.0" y="70" width="147.0" height="14" fill="#b07219"/>
-  <rect x="447.0" y="70" width="114.1" height="14" fill="#555555"/>
-  <rect x="561.1" y="70" width="101.2" height="14" fill="#3178c6"/>
-  <rect x="662.2" y="70" width="72.4" height="14" fill="#dea584"/>
-  <rect x="734.6" y="70" width="71.3" height="14" fill="#6E4C13"/>
-  <rect x="806.0" y="70" width="14.0" height="14" fill="#3572A5"/>
+  <rect x="300.0" y="70" width="146.3" height="14" fill="#b07219"/>
+  <rect x="446.3" y="70" width="113.6" height="14" fill="#555555"/>
+  <rect x="559.8" y="70" width="100.7" height="14" fill="#3178c6"/>
+  <rect x="660.5" y="70" width="72.1" height="14" fill="#dea584"/>
+  <rect x="732.6" y="70" width="71.0" height="14" fill="#6E4C13"/>
+  <rect x="803.6" y="70" width="16.4" height="14" fill="#3572A5"/>
   </g>
-  <circle cx="305" cy="114" r="5" fill="#b07219"/><text x="318" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Java</text><text x="348" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">28.3%</text>
-  <circle cx="570" cy="114" r="5" fill="#555555"/><text x="583" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">C</text><text x="591" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">21.9%</text>
-  <circle cx="305" cy="140" r="5" fill="#3178c6"/><text x="318" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">TypeScript</text><text x="394" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">19.5%</text>
+  <circle cx="305" cy="114" r="5" fill="#b07219"/><text x="318" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Java</text><text x="348" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">28.1%</text>
+  <circle cx="570" cy="114" r="5" fill="#555555"/><text x="583" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">C</text><text x="591" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">21.8%</text>
+  <circle cx="305" cy="140" r="5" fill="#3178c6"/><text x="318" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">TypeScript</text><text x="394" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">19.4%</text>
   <circle cx="570" cy="140" r="5" fill="#dea584"/><text x="583" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Rust</text><text x="613" y="144" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">13.9%</text>
   <circle cx="305" cy="166" r="5" fill="#6E4C13"/><text x="318" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Assembly</text><text x="379" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">13.7%</text>
-  <circle cx="570" cy="166" r="5" fill="#3572A5"/><text x="583" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Python</text><text x="629" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">2.7%</text>
+  <circle cx="570" cy="166" r="5" fill="#3572A5"/><text x="583" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Python</text><text x="629" y="170" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">3.2%</text>
 </svg>

@@ -18,8 +18,8 @@ USER = os.environ.get("STATS_USER", "IbrahimAwad98")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "stats.svg"
 
-BG, FG, MUTED = "#0D1117", "#C9D1D9", "#8B949E"
-ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
+BG, FG, MUTED = "#0B1020", "#C9D1D9", "#8B949E"
+ACCENT, ACCENT2, BORDER = "#7C3AED", "#22D3EE", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 # Officiella GitHub-språkfärger för de vanligaste språken
