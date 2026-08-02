@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 44" width="520" height="44" role="img" aria-label="Fullstack Development / Backend &amp; Frontend Engineering / Systems Programming in C / Embedded Systems · RISC-V / Databases &amp; System Design / Currently Learning Rust / AI-Assisted Development Workflow">
-  <text x="8" y="29" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace" font-size="22" fill="#9333ea">&#62;</text>
+  <text x="8" y="29" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace" font-size="22" fill="#7C3AED">&#62;</text>
   <g opacity="0">
     <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.0;0.002381;0.12619;0.135714;1"
              dur="21.0s" repeatCount="indefinite" calcMode="discrete"/>
@@ -10,8 +10,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip0)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Fullstack Development</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Fullstack Development</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;311.2;311.2;34" keyTimes="0;0.0;0.071429;0.135714;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -28,8 +28,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip1)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Backend &amp; Frontend Engineering</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Backend &amp; Frontend Engineering</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;430.0;430.0;34" keyTimes="0;0.142857;0.214286;0.278571;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -46,8 +46,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip2)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Systems Programming in C</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Systems Programming in C</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;350.8;350.8;34" keyTimes="0;0.285714;0.357143;0.421429;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -64,8 +64,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip3)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Embedded Systems · RISC-V</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Embedded Systems · RISC-V</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;364.0;364.0;34" keyTimes="0;0.428571;0.5;0.564286;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -82,8 +82,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip4)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Databases &amp; System Design</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Databases &amp; System Design</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;364.0;364.0;34" keyTimes="0;0.571429;0.642857;0.707143;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -100,8 +100,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip5)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">Currently Learning Rust</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">Currently Learning Rust</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;337.6;337.6;34" keyTimes="0;0.714286;0.785714;0.85;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"
@@ -118,8 +118,8 @@
       </rect>
     </clipPath>
     <text x="34" y="29" clip-path="url(#clip6)" font-family="'SFMono-Regular', 'Fira Code', Consolas, 'Liberation Mono', monospace"
-          font-size="22" fill="#06b6d4">AI-Assisted Development Workflow</text>
-    <rect y="12" width="11" height="22" fill="#9333ea" x="34">
+          font-size="22" fill="#22D3EE">AI-Assisted Development Workflow</text>
+    <rect y="12" width="11" height="22" fill="#7C3AED" x="34">
       <animate attributeName="x" values="34;34;456.4;456.4;34" keyTimes="0;0.857143;0.928571;0.992857;1"
                dur="21.0s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.25;0.49;0.5"

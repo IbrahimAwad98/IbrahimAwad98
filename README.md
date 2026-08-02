@@ -1,14 +1,14 @@
-<img src="./assets/banner.svg" alt="Ibrahim Awad — Fullstack Developer" width="100%" />
+<img src="./assets/header.png" alt="Ibrahim Awad — Fullstack Developer" width="100%" />
 
 <p align="center">
   <a href="https://www.linkedin.com/in/ibrahim-awad-31a73a2aa">
     <img src="https://img.shields.io/badge/LinkedIn-Ibrahim%20Awad-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:ibrahimawad98@hotmail.com">
-    <img src="https://img.shields.io/badge/Email-Get%20in%20touch-9333EA?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-Get%20in%20touch-7C3AED?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://github.com/IbrahimAwad98?tab=repositories">
-    <img src="https://img.shields.io/badge/Projects-View%20my%20work-06B6D4?style=for-the-badge&logo=github&logoColor=white" alt="Projects" />
+    <img src="https://img.shields.io/badge/Projects-View%20my%20work-22D3EE?style=for-the-badge&logo=github&logoColor=white" alt="Projects" />
   </a>
 </p>
 
@@ -65,8 +65,8 @@ fn main() {
       <p>
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
         <img src="https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white" alt="Stripe" />
-        <img src="https://img.shields.io/badge/Code%20Review-06B6D4?style=flat-square" alt="Code review" />
-        <img src="https://img.shields.io/badge/Production%20Codebase-9333EA?style=flat-square" alt="Production codebase" />
+        <img src="https://img.shields.io/badge/Code%20Review-22D3EE?style=flat-square" alt="Code review" />
+        <img src="https://img.shields.io/badge/Production%20Codebase-7C3AED?style=flat-square" alt="Production codebase" />
       </p>
       <p><sub><i>Code is proprietary and not public.</i></sub></p>
     </td>
@@ -106,8 +106,8 @@ fn main() {
   <img src="https://img.shields.io/badge/RISC--V-283272?style=flat-square&logo=riscv&logoColor=white" alt="RISC-V" />
   <img src="https://img.shields.io/badge/JavaFX-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="JavaFX" />
   <img src="https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square" alt="SCRUM" />
-  <img src="https://img.shields.io/badge/CI%2FCD-06B6D4?style=flat-square&logo=githubactions&logoColor=white" alt="CI/CD" />
-  <img src="https://img.shields.io/badge/DevOps-9333EA?style=flat-square" alt="DevOps" />
+  <img src="https://img.shields.io/badge/CI%2FCD-22D3EE?style=flat-square&logo=githubactions&logoColor=white" alt="CI/CD" />
+  <img src="https://img.shields.io/badge/DevOps-7C3AED?style=flat-square" alt="DevOps" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
@@ -165,7 +165,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
       <p>
         <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
         <img src="https://img.shields.io/badge/SDL2-1B1B1B?style=flat-square" alt="SDL2" />
-        <img src="https://img.shields.io/badge/Networking-06B6D4?style=flat-square" alt="Networking" />
+        <img src="https://img.shields.io/badge/Networking-22D3EE?style=flat-square" alt="Networking" />
       </p>
     </td>
     <td width="50%" valign="top">
@@ -175,7 +175,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
       <p>
         <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+        <img src="https://img.shields.io/badge/Tailwind-22D3EE?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
       </p>
     </td>
   </tr>
@@ -208,7 +208,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
       <p>Data structures and algorithms implemented from scratch — generic BST, linked lists, stacks and queues, sorting, and backtracking solvers for mazes and N-Queens.</p>
       <p>
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-        <img src="https://img.shields.io/badge/DSA-9333EA?style=flat-square" alt="DSA" />
+        <img src="https://img.shields.io/badge/DSA-7C3AED?style=flat-square" alt="DSA" />
       </p>
     </td>
     <td width="50%" valign="top">
@@ -217,8 +217,8 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
       <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
       <p>
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-        <img src="https://img.shields.io/badge/SQL-1E3A8A?style=flat-square" alt="SQL" />
-        <img src="https://img.shields.io/badge/ER%20Diagram-9333EA?style=flat-square" alt="ER Diagram" />
+        <img src="https://img.shields.io/badge/SQL-6366F1?style=flat-square" alt="SQL" />
+        <img src="https://img.shields.io/badge/ER%20Diagram-7C3AED?style=flat-square" alt="ER Diagram" />
       </p>
     </td>
   </tr>
@@ -237,7 +237,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=IbrahimAwad98&hide_border=true&background=0D1117&ring=9333EA&fire=06B6D4&currStreakLabel=06B6D4&sideLabels=C9D1D9&dates=8B949E&stroke=9333EA&sideNums=C9D1D9&currStreakNum=C9D1D9" alt="Contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=IbrahimAwad98&hide_border=true&background=0B1020&ring=7C3AED&fire=22D3EE&currStreakLabel=22D3EE&sideLabels=C9D1D9&dates=8B949E&stroke=7C3AED&sideNums=C9D1D9&currStreakNum=C9D1D9" alt="Contribution streak" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
@@ -246,8 +246,8 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 
 <p align="center">
   <img src="https://img.shields.io/badge/Rust%20%26%20Systems%20Programming-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust and systems programming" />
-  <img src="https://img.shields.io/badge/Fullstack%20Development-1E3A8A?style=for-the-badge" alt="Fullstack development" />
-  <img src="https://img.shields.io/badge/Databases%20%26%20System%20Design-9333EA?style=for-the-badge" alt="Databases and system design" />
+  <img src="https://img.shields.io/badge/Fullstack%20Development-6366F1?style=for-the-badge" alt="Fullstack development" />
+  <img src="https://img.shields.io/badge/Databases%20%26%20System%20Design-7C3AED?style=for-the-badge" alt="Databases and system design" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
