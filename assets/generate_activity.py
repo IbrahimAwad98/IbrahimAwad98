@@ -26,8 +26,8 @@ TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
 DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # 31, 90, 180 eller 365
 
-BG, PANEL, FG, MUTED = "#0D1117", "#161B22", "#C9D1D9", "#8B949E"
-ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
+BG, PANEL, FG, MUTED = "#0B1020", "#131A2E", "#C9D1D9", "#8B949E"
+ACCENT, ACCENT2, BORDER = "#7C3AED", "#22D3EE", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 QUERY = """
