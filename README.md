@@ -231,6 +231,10 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
 </p>
 
 <p align="center">
+  <img src="./assets/activity.svg" alt="Contribution activity" width="880" />
+</p>
+
+<p align="center">
   <img src="https://streak-stats.demolab.com?user=IbrahimAwad98&hide_border=true&background=0D1117&ring=9333EA&fire=06B6D4&currStreakLabel=06B6D4&sideLabels=C9D1D9&dates=8B949E&stroke=9333EA&sideNums=C9D1D9&currStreakNum=C9D1D9" alt="Contribution streak" />
 </p>
 
