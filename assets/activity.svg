@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" role="img" aria-label="Bidrag per dag för IbrahimAwad98 mellan 2026-07-03 och 2026-08-02. Totalt 84 bidrag, som mest 9 på en dag.">
+  <defs>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9333EA" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="260" rx="10" fill="#161B22" stroke="#21262D"/>
+  <rect x="0" y="0" width="880" height="3" rx="1.5" fill="url(#stroke)"/>
+
+  <text x="42" y="26" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13"
+        font-weight="600" fill="#C9D1D9">Contributions — last 31 days</text>
+  <text x="856" y="26" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="11" fill="#8B949E">84 total &#183; peak 9</text>
+
+  <line x1="52" y1="218.0" x2="856" y2="218.0" stroke="#21262D" stroke-width="1"/><text x="42" y="222.0" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">0</text>
+  <line x1="52" y1="175.0" x2="856" y2="175.0" stroke="#21262D" stroke-width="1"/><text x="42" y="179.0" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">2</text>
+  <line x1="52" y1="132.0" x2="856" y2="132.0" stroke="#21262D" stroke-width="1"/><text x="42" y="136.0" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">5</text>
+  <line x1="52" y1="89.0" x2="856" y2="89.0" stroke="#21262D" stroke-width="1"/><text x="42" y="93.0" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">8</text>
+  <line x1="52" y1="46.0" x2="856" y2="46.0" stroke="#21262D" stroke-width="1"/><text x="42" y="50.0" text-anchor="end" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">10</text>
+
+  <polygon points="52,218 52.0,149.2 78.8,132.0 105.6,218.0 132.4,114.8 159.2,166.4 186.0,166.4 212.8,63.2 239.6,149.2 266.4,200.8 293.2,149.2 320.0,97.6 346.8,166.4 373.6,132.0 400.4,200.8 427.2,183.6 454.0,218.0 480.8,218.0 507.6,218.0 534.4,218.0 561.2,166.4 588.0,166.4 614.8,166.4 641.6,183.6 668.4,218.0 695.2,166.4 722.0,149.2 748.8,114.8 775.6,200.8 802.4,183.6 829.2,218.0 856.0,218.0 856,218" fill="url(#fill)"/>
+  <polyline points="52.0,149.2 78.8,132.0 105.6,218.0 132.4,114.8 159.2,166.4 186.0,166.4 212.8,63.2 239.6,149.2 266.4,200.8 293.2,149.2 320.0,97.6 346.8,166.4 373.6,132.0 400.4,200.8 427.2,183.6 454.0,218.0 480.8,218.0 507.6,218.0 534.4,218.0 561.2,166.4 588.0,166.4 614.8,166.4 641.6,183.6 668.4,218.0 695.2,166.4 722.0,149.2 748.8,114.8 775.6,200.8 802.4,183.6 829.2,218.0 856.0,218.0" fill="none" stroke="url(#stroke)"
+            stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="52.0" cy="149.2" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="78.8" cy="132.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="105.6" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="132.4" cy="114.8" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="159.2" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="186.0" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="212.8" cy="63.2" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="239.6" cy="149.2" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="266.4" cy="200.8" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="293.2" cy="149.2" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="320.0" cy="97.6" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="346.8" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="373.6" cy="132.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="400.4" cy="200.8" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="427.2" cy="183.6" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="454.0" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="480.8" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="507.6" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="534.4" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="561.2" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="588.0" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="614.8" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="641.6" cy="183.6" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="668.4" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="695.2" cy="166.4" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="722.0" cy="149.2" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="748.8" cy="114.8" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="775.6" cy="200.8" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="802.4" cy="183.6" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="829.2" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/><circle cx="856.0" cy="218.0" r="3" fill="#0D1117" stroke="#06B6D4" stroke-width="2"/>
+
+  <text x="52.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">3</text>
+  <text x="186.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">8</text>
+  <text x="320.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">13</text>
+  <text x="454.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">18</text>
+  <text x="588.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">23</text>
+  <text x="722.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">28</text>
+  <text x="856.0" y="238" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10" fill="#8B949E">2</text>
+</svg>
