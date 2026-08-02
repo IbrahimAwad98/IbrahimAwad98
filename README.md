@@ -80,19 +80,23 @@ fn main() {
 <table>
   <tr>
     <td><b>Languages</b></td>
-    <td><img src="https://skillicons.dev/icons?i=rust,c,cpp,cs,java,py,ts,js&theme=dark" alt="Rust, C, C++, C#, Java, Python, TypeScript, JavaScript" /></td>
+    <td><img src="https://skillicons.dev/icons?i=rust,c,cs,java,py,ts,js,powershell&theme=dark" alt="Rust, C, C#, Java, Python, TypeScript, JavaScript, PowerShell" /></td>
   </tr>
   <tr>
     <td><b>Frontend</b></td>
-    <td><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,html,css&theme=dark" alt="React, Next.js, Tailwind, HTML, CSS" /></td>
+    <td><img src="https://skillicons.dev/icons?i=nextjs,html,css&theme=dark" alt="Next.js, HTML5, CSS3" /></td>
   </tr>
   <tr>
     <td><b>Backend &amp; Data</b></td>
-    <td><img src="https://skillicons.dev/icons?i=nodejs,express,mysql,mongodb,postgres&theme=dark" alt="Node.js, Express, MySQL, MongoDB, PostgreSQL" /></td>
+    <td><img src="https://skillicons.dev/icons?i=nodejs,dotnet,mysql,postgres,mongodb,supabase&theme=dark" alt="Node.js, .NET, MySQL, PostgreSQL, MongoDB, Supabase" /></td>
   </tr>
   <tr>
-    <td><b>Tools</b></td>
-    <td><img src="https://skillicons.dev/icons?i=git,github,docker,linux,vscode,idea&theme=dark" alt="Git, GitHub, Docker, Linux, VS Code, IntelliJ" /></td>
+    <td><b>Cloud &amp; DevOps</b></td>
+    <td><img src="https://skillicons.dev/icons?i=azure,vercel,githubactions,git,github,gitlab&theme=dark" alt="Azure, Vercel, GitHub Actions, Git, GitHub, GitLab" /></td>
+  </tr>
+  <tr>
+    <td><b>Testing &amp; Design</b></td>
+    <td><img src="https://skillicons.dev/icons?i=vitest,figma&theme=dark" alt="Vitest, Figma" /></td>
   </tr>
 </table>
 
