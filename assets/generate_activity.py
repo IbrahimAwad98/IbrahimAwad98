@@ -24,7 +24,7 @@ from pathlib import Path
 USER = os.environ.get("STATS_USER", "IbrahimAwad98")
 TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
-DAYS = 31
+DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # 31, 90, 180 eller 365
 
 BG, PANEL, FG, MUTED = "#0D1117", "#161B22", "#C9D1D9", "#8B949E"
 ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
@@ -80,7 +80,8 @@ def fetch():
 def demo():
     import random
     random.seed(3)
-    base = datetime(2026, 7, 3, tzinfo=timezone.utc)
+    end = datetime(2026, 8, 2, tzinfo=timezone.utc)
+    base = end - timedelta(days=DAYS - 1)
     out = []
     for i in range(DAYS):
         d = base + timedelta(days=i)
@@ -126,24 +127,47 @@ def build(series):
     line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
     area = (f"{L},{T + PH} " + line + f" {L + PW},{T + PH}")
 
-    dots = "".join(
-        f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{BG}" '
-        f'stroke="{ACCENT2}" stroke-width="2"/>'
-        for x, y in pts
-    )
+    # Punktmarkörer bara när de får plats — vid långa intervall blir de gyttrig
+    dots = ""
+    if n <= 60:
+        dots = "".join(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{BG}" '
+            f'stroke="{ACCENT2}" stroke-width="2"/>'
+            for x, y in pts
+        )
 
-    # x-etiketter var 5:e dag
+    # x-etiketter: månadsnamn vid långa intervall, dagsnummer vid korta
+    MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     xlab = []
-    for i, (date, _) in enumerate(series):
-        if i % 5 == 0 or i == n - 1:
-            day = date[8:10].lstrip("0")
-            xlab.append(
-                f'<text x="{px(i):.1f}" y="{T + PH + 20}" text-anchor="middle" '
-                f'font-family="{FONT}" font-size="10" fill="{MUTED}">{day}</text>'
-            )
+    if n > 60:
+        seen = set()
+        for i, (date, _) in enumerate(series):
+            month = date[:7]
+            if month not in seen:
+                seen.add(month)
+                if i > 6 and i < n - 6:       # undvik krock med kanterna
+                    xlab.append(
+                        f'<text x="{px(i):.1f}" y="{T + PH + 20}" '
+                        f'text-anchor="middle" font-family="{FONT}" '
+                        f'font-size="10" fill="{MUTED}">'
+                        f'{MONTHS[int(date[5:7]) - 1]}</text>'
+                    )
+    else:
+        for i, (date, _) in enumerate(series):
+            if i % 5 == 0 or i == n - 1:
+                xlab.append(
+                    f'<text x="{px(i):.1f}" y="{T + PH + 20}" text-anchor="middle" '
+                    f'font-family="{FONT}" font-size="10" '
+                    f'fill="{MUTED}">{date[8:10].lstrip("0")}</text>'
+                )
 
     total = sum(counts)
     first, last = series[0][0], series[-1][0]
+    heading = ("last 12 months" if n > 300 else
+               f"last {n // 30} months" if n > 60 else
+               f"last {n} days")
+    lw = 1.6 if n > 60 else 2.5
     nl = "\n  "
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Bidrag per dag för {USER} mellan {first} och {last}. Totalt {total} bidrag, som mest {peak} på en dag.">
   <defs>
@@ -161,7 +185,7 @@ def build(series):
   <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#stroke)"/>
 
   <text x="{L - 10}" y="26" font-family="{FONT}" font-size="13"
-        font-weight="600" fill="{FG}">Contributions — last {DAYS} days</text>
+        font-weight="600" fill="{FG}">Contributions — {heading}</text>
   <text x="{W - R}" y="26" text-anchor="end" font-family="{FONT}"
         font-size="11" fill="{MUTED}">{total} total &#183; peak {peak}</text>
 
@@ -169,7 +193,7 @@ def build(series):
 
   <polygon points="{area}" fill="url(#fill)"/>
   <polyline points="{line}" fill="none" stroke="url(#stroke)"
-            stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            stroke-width="{lw}" stroke-linejoin="round" stroke-linecap="round"/>
   {dots}
 
   {nl.join(xlab)}
