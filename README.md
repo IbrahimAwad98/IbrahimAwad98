@@ -161,7 +161,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
     <td width="50%" valign="top">
       <h3>🏎️ <a href="https://github.com/IbrahimAwad98/Road-Rumble">Road Rumble</a></h3>
       <p><em>C · SDL2 · UDP Networking</em></p>
-      <p>Multiplayer racing game with real-time UDP client–server communication and cross-platform support. Built in a SCRUM team.</p>
+      <p>Multiplayer racing for up to four players — fixed-size state packets over UDP via SDL_net, with a central server relaying player state. Built in a six-person SCRUM team, with CI building on Ubuntu and macOS.</p>
       <p>
         <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
         <img src="https://img.shields.io/badge/SDL2-1B1B1B?style=flat-square" alt="SDL2" />
@@ -171,7 +171,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
     <td width="50%" valign="top">
       <h3>🌤️ <a href="https://github.com/IbrahimAwad98/Weather-App-via-React">Weather App</a></h3>
       <p><em>Next.js · React · TypeScript</em></p>
-      <p>Weather application fetching live OpenWeatherMap data, with typed API responses, error handling and dark mode.</p>
+      <p>Weather application fetching live OpenWeatherMap data — city search with current temperature, wind and humidity, and explicit error states rather than silent failures.</p>
       <p>
         <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -183,7 +183,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
     <td width="50%" valign="top">
       <h3>📚 Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
       <p><em>Java · JavaFX · MySQL / MongoDB</em></p>
-      <p>Library management client built twice — against MySQL with prepared statements and against MongoDB — same MVC architecture with an interface-driven data layer, login, search, reviews and ratings.</p>
+      <p>Library management client built twice — against MySQL with prepared statements and against MongoDB — same MVC architecture with an interface-driven data layer, book search, author and genre browsing and ratings. The MongoDB variant adds login and text reviews.</p>
       <p>
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
@@ -205,7 +205,7 @@ AI is part of my toolchain, not a replacement for understanding the system. I us
     <td width="50%" valign="top">
       <h3>🧠 <a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
       <p><em>Java</em></p>
-      <p>Data structures and algorithms implemented from scratch — generic BST, linked lists, stacks and queues, sorting, and backtracking solvers for mazes and N-Queens.</p>
+      <p>Data structures and algorithms implemented from scratch — BST, linked lists, stacks and queues, five sorting algorithms, expression evaluation, and backtracking solvers for mazes and puzzle problems.</p>
       <p>
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
         <img src="https://img.shields.io/badge/DSA-7C3AED?style=flat-square" alt="DSA" />
