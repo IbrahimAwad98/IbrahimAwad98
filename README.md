@@ -41,7 +41,7 @@ fn main() {
         role:     "Fullstack Developer",
         focus:    ["Systems & Embedded", "Databases", "Web"],
         learning: "Rust",
-        open_to:  "Graduate roles · Thesis projects · Collaboration",
+        open_to:  "Internships · Thesis projects · Collaboration",
     };
 
     println!("Let's build something solid. 🦀");
