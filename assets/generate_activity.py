@@ -26,8 +26,8 @@ TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
 DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # 31, 90, 180 eller 365
 
-BG, PANEL, FG, MUTED = "#0B1020", "#131A2E", "#C9D1D9", "#8B949E"
-ACCENT, ACCENT2, BORDER = "#7C3AED", "#22D3EE", "#21262D"
+BG, PANEL, FG, MUTED = "#0D1117", "#161B22", "#C9D1D9", "#8B949E"
+ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 QUERY = """
@@ -201,6 +201,127 @@ def build(series):
 '''
 
 
+
+STREAK_OUT = Path(__file__).parent / "streak.svg"
+
+
+def streaks(series):
+    """Räknar strecken ur samma dagsdata som grafen använder.
+
+    Dagens datum bryter inte ett streck förrän dygnet är slut — samma
+    konvention som GitHub själva använder, annars skulle strecket se
+    brutet ut varje morgon.
+    """
+    days = [(d, c) for d, c in series]
+    total = sum(c for _, c in days)
+
+    # Längsta strecket någonstans i perioden
+    longest = run = 0
+    longest_range = ("", "")
+    run_start = ""
+    for date, count in days:
+        if count > 0:
+            if run == 0:
+                run_start = date
+            run += 1
+            if run > longest:
+                longest = run
+                longest_range = (run_start, date)
+        else:
+            run = 0
+
+    # Nuvarande streck, räknat bakifrån
+    current = 0
+    current_range = ("", "")
+    for i in range(len(days) - 1, -1, -1):
+        date, count = days[i]
+        if count > 0:
+            current += 1
+            current_range = (date, current_range[1] or date)
+        elif i == len(days) - 1:
+            continue          # dagens nolla bryter inte strecket ännu
+        else:
+            break
+    if current:
+        current_range = (days[len(days) - current][0], days[-1][0])
+
+    return {
+        "total": total,
+        "current": current,
+        "current_range": current_range,
+        "longest": longest,
+        "longest_range": longest_range,
+        "first": days[0][0],
+        "last": days[-1][0],
+    }
+
+
+def short_date(iso):
+    """2026-07-14 -> 14 Jul"""
+    if not iso:
+        return ""
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    try:
+        y, m, d = iso.split("-")
+        return f"{int(d)} {months[int(m) - 1]}"
+    except (ValueError, IndexError):
+        return iso
+
+
+def build_streak(st):
+    W, H = 880, 190
+    third = W / 3
+    r = 46
+    cx, cy = W / 2, 96
+
+    def block(x, value, label, sub):
+        return (
+            f'<text x="{x:.0f}" y="86" text-anchor="middle" font-family="{FONT}" '
+            f'font-size="34" font-weight="700" fill="{FG}">{value}</text>'
+            f'<text x="{x:.0f}" y="112" text-anchor="middle" font-family="{FONT}" '
+            f'font-size="12" fill="{MUTED}" letter-spacing="0.5">{label}</text>'
+            f'<text x="{x:.0f}" y="134" text-anchor="middle" font-family="{FONT}" '
+            f'font-size="10.5" fill="{MUTED}" opacity="0.75">{sub}</text>'
+        )
+
+    cur_sub = (f"{short_date(st['current_range'][0])} – "
+               f"{short_date(st['current_range'][1])}") if st["current"] else "no active streak"
+    long_sub = (f"{short_date(st['longest_range'][0])} – "
+                f"{short_date(st['longest_range'][1])}") if st["longest"] else ""
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Contribution streaks: {st['total']} contributions in the last 12 months, current streak {st['current']} days, longest streak {st['longest']} days">
+  <defs>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{ACCENT}"/>
+      <stop offset="100%" stop-color="{ACCENT2}"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="{W}" height="{H}" rx="10" fill="{PANEL}" stroke="{BORDER}"/>
+  <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#edge)"/>
+
+  <line x1="{third:.0f}" y1="42" x2="{third:.0f}" y2="150" stroke="{BORDER}"/>
+  <line x1="{2 * third:.0f}" y1="42" x2="{2 * third:.0f}" y2="150" stroke="{BORDER}"/>
+
+  {block(third / 2, st["total"], "TOTAL CONTRIBUTIONS", f"{short_date(st['first'])} – {short_date(st['last'])}")}
+
+  <circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r}" fill="none" stroke="{BORDER}" stroke-width="3"/>
+  <circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r}" fill="none" stroke="{ACCENT}" stroke-width="3"
+          stroke-linecap="round" stroke-dasharray="{2 * 3.14159 * r:.0f}"
+          stroke-dashoffset="{2 * 3.14159 * r * (1 - min(st['current'] / 14, 1)):.0f}"
+          transform="rotate(-90 {cx:.0f} {cy:.0f})"/>
+  <text x="{cx:.0f}" y="{cy + 10:.0f}" text-anchor="middle" font-family="{FONT}"
+        font-size="30" font-weight="700" fill="{FG}">{st['current']}</text>
+  <text x="{cx:.0f}" y="162" text-anchor="middle" font-family="{FONT}"
+        font-size="12" fill="{ACCENT2}" letter-spacing="0.5">CURRENT STREAK</text>
+  <text x="{cx:.0f}" y="{cy + 62:.0f}" text-anchor="middle" font-family="{FONT}"
+        font-size="10.5" fill="{MUTED}" opacity="0">{cur_sub}</text>
+
+  {block(2.5 * third, st["longest"], "LONGEST STREAK", long_sub)}
+</svg>
+'''
+
 if __name__ == "__main__":
     if "--demo" in sys.argv:
         series = demo()
@@ -224,3 +345,8 @@ if __name__ == "__main__":
 
     OUT.write_text(build(series), encoding="utf-8")
     print(f"Skrev {OUT} ({OUT.stat().st_size} bytes)")
+
+    st = streaks(series)
+    STREAK_OUT.write_text(build_streak(st), encoding="utf-8")
+    print(f"Skrev {STREAK_OUT} — total {st['total']}, "
+          f"current {st['current']}, longest {st['longest']}")
