@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 190" width="880" height="190" role="img" aria-label="Contribution streaks: 1111 contributions in the last 12 months, current streak 6 days, longest streak 15 days">
+  <defs>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="190" rx="10" fill="#161B22" stroke="#21262D"/>
+  <rect x="0" y="0" width="880" height="3" rx="1.5" fill="url(#edge)"/>
+
+  <line x1="293" y1="42" x2="293" y2="150" stroke="#21262D"/>
+  <line x1="587" y1="42" x2="587" y2="150" stroke="#21262D"/>
+
+  <text x="147" y="86" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#C9D1D9">1111</text><text x="147" y="112" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#8B949E" letter-spacing="0.5">TOTAL CONTRIBUTIONS</text><text x="147" y="134" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" fill="#8B949E" opacity="0.75">3 Aug – 2 Aug</text>
+
+  <circle cx="440" cy="96" r="46" fill="none" stroke="#21262D" stroke-width="3"/>
+  <circle cx="440" cy="96" r="46" fill="none" stroke="#9333EA" stroke-width="3"
+          stroke-linecap="round" stroke-dasharray="289"
+          stroke-dashoffset="165"
+          transform="rotate(-90 440 96)"/>
+  <text x="440" y="106" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="30" font-weight="700" fill="#C9D1D9">6</text>
+  <text x="440" y="162" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="12" fill="#06B6D4" letter-spacing="0.5">CURRENT STREAK</text>
+  <text x="440" y="158" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="10.5" fill="#8B949E" opacity="0">28 Jul – 2 Aug</text>
+
+  <text x="733" y="86" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#C9D1D9">15</text><text x="733" y="112" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#8B949E" letter-spacing="0.5">LONGEST STREAK</text><text x="733" y="134" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" fill="#8B949E" opacity="0.75">22 Jan – 5 Feb</text>
+</svg>
