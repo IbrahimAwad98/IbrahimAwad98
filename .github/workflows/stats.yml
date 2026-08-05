@@ -37,12 +37,12 @@ jobs:
 
       - name: Committa om något ändrats
         run: |
-          if git diff --quiet assets/stats.svg assets/activity.svg; then
+          if git diff --quiet assets/stats.svg assets/activity.svg assets/streak.svg; then
             echo "Ingen förändring i statistiken."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/stats.svg assets/activity.svg
+          git add assets/stats.svg assets/activity.svg assets/streak.svg
           git commit -m "chore: update stats card [skip ci]"
           git push
