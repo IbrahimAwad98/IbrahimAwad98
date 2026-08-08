@@ -26,7 +26,7 @@ TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
 DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # 31, 90, 180 eller 365
 
-BG, PANEL, FG, MUTED = "#0D1117", "#161B22", "#C9D1D9", "#8B949E"
+BG, FG, MUTED = "#0B1020", "#C9D1D9", "#8B949E"
 ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
@@ -181,7 +181,7 @@ def build(series):
     </linearGradient>
   </defs>
 
-  <rect width="{W}" height="{H}" rx="10" fill="{PANEL}" stroke="{BORDER}"/>
+  <rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>
   <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#stroke)"/>
 
   <text x="{L - 10}" y="26" font-family="{FONT}" font-size="13"
@@ -298,7 +298,7 @@ def build_streak(st):
     </linearGradient>
   </defs>
 
-  <rect width="{W}" height="{H}" rx="10" fill="{PANEL}" stroke="{BORDER}"/>
+  <rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>
   <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#edge)"/>
 
   <line x1="{third:.0f}" y1="42" x2="{third:.0f}" y2="150" stroke="{BORDER}"/>
