@@ -12,7 +12,7 @@
   <line x1="293" y1="42" x2="293" y2="150" stroke="#21262D"/>
   <line x1="587" y1="42" x2="587" y2="150" stroke="#21262D"/>
 
-  <text x="147" y="86" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#C9D1D9">570</text><text x="147" y="112" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#8B949E" letter-spacing="0.5">TOTAL CONTRIBUTIONS</text><text x="147" y="134" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" fill="#8B949E" opacity="0.75">15 Aug – 14 Aug</text>
+  <text x="147" y="86" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#C9D1D9">570</text><text x="147" y="112" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="#8B949E" letter-spacing="0.5">TOTAL CONTRIBUTIONS</text><text x="147" y="134" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="10.5" fill="#8B949E" opacity="0.75">16 Aug – 15 Aug</text>
 
   <circle cx="440" cy="96" r="46" fill="none" stroke="#21262D" stroke-width="3"/>
   <circle cx="440" cy="96" r="46" fill="none" stroke="#9333EA" stroke-width="3"
