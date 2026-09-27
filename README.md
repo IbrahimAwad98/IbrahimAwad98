@@ -27,24 +27,27 @@ I build complete systems — from **bare-metal embedded code (RISC-V, C)**, up t
 My focus is writing clean code, understanding systems end-to-end, and solving real problems rather than tutorial exercises.
 
 ```rust
-struct Developer {
-    name:     &'static str,
-    role:     &'static str,
-    focus:    [&'static str; 3],
-    learning: &'static str,
-    open_to:  &'static str,
-}
+public class Developer {
 
-fn main() {
-    let me = Developer {
-        name:     "Ibrahim Awad",
-        role:     "Fullstack Developer",
-        focus:    ["Systems & Embedded", "Databases", "Web"],
-        learning: "Rust",
-        open_to:  "Internships · Thesis projects · Collaboration",
-    };
+    record Profile(
+        String name,
+        String role,
+        String[] focus,
+        String learning,
+        String openTo
+    ) {}
 
-    println!("Let's build something solid. 🦀");
+    public static void main(String[] args) {
+        var me = new Profile(
+            "Ibrahim Awad",
+            "Fullstack Developer",
+            new String[] { "Systems & Embedded", "Databases", "Web" },
+            "Rust",
+            "Internships · Thesis projects · Collaboration"
+        );
+
+        System.out.println("Let's build something solid.");
+    }
 }
 ```
 
