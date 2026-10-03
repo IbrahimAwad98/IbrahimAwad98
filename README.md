@@ -115,24 +115,6 @@ public class Developer {
 
 <img src="./assets/divider.svg" alt="" width="100%" />
 
-## AI-Assisted Development
-
-<p align="center">
-  <sub><b>MODELS</b></sub><br/>
-  <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
-  <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
-  <img src="https://img.shields.io/badge/Codex-412991?style=for-the-badge&logo=openai&logoColor=white" alt="Codex" />
-</p>
-
-<p align="center">
-  <sub><b>ENVIRONMENTS</b></sub><br/>
-  <img src="https://img.shields.io/badge/Cursor-0A0A0A?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
-  <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code" />
-  <img src="https://img.shields.io/badge/Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="GitHub Copilot" />
-</p>
-
-AI is part of my toolchain, not a replacement for understanding the system. I use it to iterate faster while staying accountable for every line that ships.
-
 <table>
   <tr>
     <td width="33%" valign="top">
