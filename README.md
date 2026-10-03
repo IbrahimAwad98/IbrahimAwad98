@@ -115,30 +115,6 @@ public class Developer {
 
 <img src="./assets/divider.svg" alt="" width="100%" />
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h4>Architecture &amp; Review</h4>
-      <p><em>Claude · Claude Code</em></p>
-      <p>Design discussions, refactoring across larger codebases, and critical review of my own solutions before they land.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h4>In-Editor Flow</h4>
-      <p><em>Cursor · Copilot</em></p>
-      <p>Multi-file edits with the whole repo in context, inline completion, and fast iteration without leaving the editor.</p>
-    </td>
-    <td width="33%" valign="top">
-      <h4>Research &amp; Scaffolding</h4>
-      <p><em>Gemini · Codex</em></p>
-      <p>Exploring unfamiliar APIs and specs, generating boilerplate and test coverage — so time goes into the parts that require thinking.</p>
-    </td>
-  </tr>
-</table>
-
-> **Principle:** every AI-generated suggestion gets read, questioned and tested before it enters a project. The value is speed of iteration — not skipping the engineering.
-
-<img src="./assets/divider.svg" alt="" width="100%" />
-
 ## Featured Projects
 
 <table>
