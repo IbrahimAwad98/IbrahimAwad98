@@ -51,7 +51,7 @@ def collect():
     user = api(f"/users/{USER}")
     repos, page = [], 1
     while True:
-        batch = api(f"/users/{USER}/repos?per_page=100&page={page}&type=owner")
+        batch = api(f"/user/repos?per_page=100&page={page}&affiliation=owner")  # /user/ = inkl. privata (kräver PAT)
         repos.extend(batch)
         if len(batch) < 100:
             break

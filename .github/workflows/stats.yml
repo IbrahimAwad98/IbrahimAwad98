@@ -24,7 +24,7 @@ jobs:
 
       - name: Generera stats.svg
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}            # PAT: ser även privata repos
           STATS_USER: ${{ github.repository_owner }}
         run: python3 assets/generate_stats.py
 
