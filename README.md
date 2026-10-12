@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/typing.svg" alt="Fullstack Development · Backend &amp; Frontend Engineering · Systems Programming in C · Embedded Systems · RISC-V · Databases &amp; System Design · Currently Learning ASP.NET" />
+  <img src="./assets/typing.svg" alt="Fullstack Development · Backend &amp; Frontend Engineering · Systems Programming in C · Embedded Systems · RISC-V · Databases &amp; System Design · Currently Learning Distributed Information Systems" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
@@ -42,7 +42,7 @@ public class Developer {
             "Ibrahim Awad",
             "Fullstack Developer",
             new String[] { "Systems & Embedded", "Databases", "Web" },
-            "Rust",
+            "Distributed Information Systems",
             "Internships · Thesis projects · Collaboration"
         );
 

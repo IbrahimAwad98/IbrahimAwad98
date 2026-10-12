@@ -19,8 +19,7 @@ LINES = [
     "Systems Programming in C",
     "Embedded Systems \u00b7 RISC-V",
     "Databases & System Design",
-    "Currently Learning Rust",
-    "AI-Assisted Development Workflow",
+    "Currently Learning Distributed Information Systems",
 ]
 PER = 3.0                      # sekunder per rad
 CYCLE = PER * len(LINES)
@@ -69,7 +68,7 @@ for i, line in enumerate(LINES):
     </rect>
   </g>''')
 
-typing = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 44" width="520" height="44" role="img" aria-label="{' / '.join(LINES).replace('&', '&amp;')}">
+typing = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 44" width="720" height="44" role="img" aria-label="{' / '.join(LINES).replace('&', '&amp;')}">
   <text x="8" y="29" font-family="{MONO}" font-size="22" fill="#7C3AED">&#62;</text>
 {chr(10).join(groups)}
 </svg>
