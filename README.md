@@ -20,7 +20,7 @@
 
 ## About Me
 
-Computer science engineering student at **KTH Royal Institute of Technology**, based in Stockholm.
+Computer Engineering and Economics student at **KTH Royal Institute of Technology**, based in Stockholm.
 
 I build complete systems — from **bare-metal embedded code (RISC-V, C)**, up through **backend services and databases**, to **modern frontend interfaces**.
 
@@ -199,16 +199,6 @@ public class Developer {
 
 <p align="center">
   <img src="./assets/streak.svg" alt="Contribution streaks" width="880" />
-</p>
-
-<img src="./assets/divider.svg" alt="" width="100%" />
-
-## Current Focus
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Rust%20%26%20Systems%20Programming-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust and systems programming" />
-  <img src="https://img.shields.io/badge/Fullstack%20Development-6366F1?style=for-the-badge" alt="Fullstack development" />
-  <img src="https://img.shields.io/badge/Databases%20%26%20System%20Design-7C3AED?style=for-the-badge" alt="Databases and system design" />
 </p>
 
 <img src="./assets/divider.svg" alt="" width="100%" />
