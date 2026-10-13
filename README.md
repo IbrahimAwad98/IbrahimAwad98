@@ -26,25 +26,14 @@ I build complete systems — from **bare-metal embedded code (RISC-V, C)**, up t
 
 My focus is writing clean code, understanding systems end-to-end, and solving real problems rather than tutorial exercises.
 
-```rust
+```java
 public class Developer {
-
-    record Profile(
-        String name,
-        String role,
-        String[] focus,
-        String learning,
-        String openTo
-    ) {}
-
     public static void main(String[] args) {
-        var me = new Profile(
-            "Ibrahim Awad",
-            "Fullstack Developer",
-            new String[] { "Systems & Embedded", "Databases", "Web" },
-            "Distributed Information Systems",
-            "Internships · Thesis projects · Collaboration"
-        );
+        String name = "Ibrahim Awad";
+        String role = "Fullstack Developer";
+        String[] focus = {"Systems & Embedded", "Databases", "Web"};
+        String learning = "Distributed Information Systems";
+        String openTo = "Internships · Thesis projects · Collaboration";
 
         System.out.println("Let's build something solid.");
     }
