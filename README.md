@@ -83,11 +83,11 @@ public class Developer {
 <table>
   <tr>
     <td><b>Languages</b></td>
-    <td><img src="https://skillicons.dev/icons?i=rust,c,cs,java,py,ts,js,powershell&theme=dark" alt="Rust, C, C#, Java, Python, TypeScript, JavaScript, PowerShell" /></td>
+    <td><img src="https://skillicons.dev/icons?i=rust,c,cs,java,py,ts,js,matlab&theme=dark" alt="Rust, C, C#, Java, Python, TypeScript, JavaScript, MATLAB" /></td>
   </tr>
   <tr>
     <td><b>Frontend</b></td>
-    <td><img src="https://skillicons.dev/icons?i=nextjs,html,css&theme=dark" alt="Next.js, HTML5, CSS3" /></td>
+    <td><img src="https://skillicons.dev/icons?i=react,nextjs,tauri,html,css&theme=dark" alt="React, Next.js, Tauri, HTML5, CSS3" /></td>
   </tr>
   <tr>
     <td><b>Backend &amp; Data</b></td>
@@ -95,7 +95,7 @@ public class Developer {
   </tr>
   <tr>
     <td><b>Cloud &amp; DevOps</b></td>
-    <td><img src="https://skillicons.dev/icons?i=docker,azure,vercel,githubactions,git,github,gitlab,linux&theme=dark" alt="Docker, Azure, Vercel, GitHub Actions, Git, GitHub, GitLab, Linux" /></td>
+    <td><img src="https://skillicons.dev/icons?i=docker,azure,vercel,githubactions,git,github,gitlab,linux,powershell&theme=dark" alt="Docker, Azure, Vercel, GitHub Actions, Git, GitHub, GitLab, Linux, PowerShell" /></td>
   </tr>
   <tr>
     <td><b>Testing &amp; Design</b></td>
@@ -108,6 +108,9 @@ public class Developer {
   <img src="https://img.shields.io/badge/SDL2-1B1B1B?style=flat-square" alt="SDL2" />
   <img src="https://img.shields.io/badge/RISC--V-283272?style=flat-square&logo=riscv&logoColor=white" alt="RISC-V" />
   <img src="https://img.shields.io/badge/JavaFX-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="JavaFX" />
+  <img src="https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="ASP.NET Core" />
+  <img src="https://img.shields.io/badge/Jakarta%20EE-F8981D?style=flat-square" alt="Jakarta EE" />
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logoColor=black" alt="Power BI" />
   <img src="https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square" alt="SCRUM" />
   <img src="https://img.shields.io/badge/CI%2FCD-22D3EE?style=flat-square&logo=githubactions&logoColor=white" alt="CI/CD" />
   <img src="https://img.shields.io/badge/DevOps-7C3AED?style=flat-square" alt="DevOps" />
