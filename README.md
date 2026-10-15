@@ -22,10 +22,6 @@
 
 Computer Engineering and Economics student at **KTH Royal Institute of Technology**, based in Stockholm.
 
-I build complete systems — from **bare-metal embedded code (RISC-V, C)**, up through **backend services and databases**, to **modern frontend interfaces**.
-
-My focus is writing clean code, understanding systems end-to-end, and solving real problems rather than tutorial exercises.
-
 ```java
 public class Developer {
     public static void main(String[] args) {
