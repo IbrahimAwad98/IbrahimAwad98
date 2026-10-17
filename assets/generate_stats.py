@@ -24,7 +24,7 @@ FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 # Officiella GitHub-språkfärger för de vanligaste språken
 LANG_COLORS = {
-    "Rust": "#dea584", "C": "#555555", "C++": "#f34b7d", "C#": "#178600",
+    "Rust": "#dea584", "C": "#B8C0CC", "C++": "#f34b7d", "C#": "#178600",
     "Java": "#b07219", "Python": "#3572A5", "TypeScript": "#3178c6",
     "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#563d7c",
     "Assembly": "#6E4C13", "Shell": "#89e051", "Makefile": "#427819",
