@@ -17,11 +17,11 @@
         letter-spacing="0.6">MOST USED LANGUAGES</text>
   <g clip-path="url(#rounded)">
   <rect x="30.0" y="70" width="469.0" height="14" fill="#B8C0CC"/>
-  <rect x="499.0" y="70" width="126.3" height="14" fill="#b07219"/>
-  <rect x="625.3" y="70" width="98.4" height="14" fill="#3178c6"/>
-  <rect x="723.7" y="70" width="58.2" height="14" fill="#dea584"/>
-  <rect x="781.9" y="70" width="55.8" height="14" fill="#6E4C13"/>
-  <rect x="837.7" y="70" width="12.3" height="14" fill="#178600"/>
+  <rect x="499.0" y="70" width="126.5" height="14" fill="#b07219"/>
+  <rect x="625.6" y="70" width="98.2" height="14" fill="#3178c6"/>
+  <rect x="723.7" y="70" width="58.5" height="14" fill="#dea584"/>
+  <rect x="782.2" y="70" width="55.8" height="14" fill="#6E4C13"/>
+  <rect x="838.0" y="70" width="12.0" height="14" fill="#178600"/>
   </g>
   <circle cx="35" cy="114" r="5" fill="#B8C0CC"/><text x="48" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">C</text><text x="56" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">57.2%</text>
   <circle cx="310" cy="114" r="5" fill="#b07219"/><text x="323" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9">Java</text><text x="353" y="118" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#8B949E">15.4%</text>
