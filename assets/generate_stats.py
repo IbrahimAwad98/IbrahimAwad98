@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genererar assets/stats.svg från GitHub-API:t.
+Genererar assets/stats.svg (mest använda språk) från GitHub-API:t.
 
 Körs automatiskt av .github/workflows/stats.yml en gång per dygn.
 Manuell körning:
@@ -48,7 +48,6 @@ def api(path):
 
 
 def collect():
-    user = api(f"/users/{USER}")
     repos, page = [], 1
     while True:
         batch = api(f"/user/repos?per_page=100&page={page}&affiliation=owner")  # /user/ = inkl. privata (kräver PAT)
@@ -57,12 +56,9 @@ def collect():
             break
         page += 1
 
-    own = [r for r in repos if not r["fork"]]
-    stars = sum(r["stargazers_count"] for r in own)
-
     langs = {}
-    for r in own:
-        if r["archived"]:
+    for r in repos:
+        if r["fork"] or r["archived"]:
             continue
         try:
             for lang, byts in api(f"/repos/{USER}/{r['name']}/languages").items():
@@ -70,16 +66,10 @@ def collect():
         except Exception as e:              # ett trasigt repo får inte fälla hela körningen
             print(f"  hoppar över {r['name']}: {e}", file=sys.stderr)
 
-    return {
-        "repos": len(own),
-        "stars": stars,
-        "followers": user["followers"],
-        "langs": dict(sorted(langs.items(), key=lambda kv: -kv[1])[:6]),
-    }
+    return {"langs": dict(sorted(langs.items(), key=lambda kv: -kv[1])[:6])}
 
 
 DEMO = {
-    "repos": 28, "stars": 3, "followers": 14,
     "langs": {"Java": 420000, "C": 310000, "TypeScript": 180000,
               "Rust": 95000, "Python": 60000, "CSS": 40000},
 }
@@ -90,24 +80,11 @@ def esc(s):
 
 
 def build(d):
-    W, H = 880, 210
+    W, H = 880, 165
     total = sum(d["langs"].values()) or 1
 
-    # --- vänsterpanel: nyckeltal ---
-    metrics = [("Repositories", d["repos"]), ("Total Stars", d["stars"]),
-               ("Followers", d["followers"])]
-    left = []
-    for i, (label, val) in enumerate(metrics):
-        y = 78 + i * 42
-        left.append(
-            f'<text x="46" y="{y}" font-family="{FONT}" font-size="26" font-weight="700" '
-            f'fill="{ACCENT2}">{val}</text>'
-            f'<text x="46" y="{y + 17}" font-family="{FONT}" font-size="11" '
-            f'fill="{MUTED}" letter-spacing="0.6">{label.upper()}</text>'
-        )
-
-    # --- högerpanel: språkfördelning ---
-    X, BW = 300, 520
+    # --- språkfördelning: stapel + legend i tre kolumner ---
+    X, BW = 30, 820
     bar, legend, off = [], [], 0.0
     for i, (lang, byts) in enumerate(d["langs"].items()):
         frac = byts / total
@@ -117,8 +94,8 @@ def build(d):
                    f'height="14" fill="{color}"/>')
         off += w
 
-        col, row = i % 2, i // 2
-        lx, ly = X + col * 265, 118 + row * 26
+        col, row = i % 3, i // 3
+        lx, ly = X + col * 275, 118 + row * 26
         legend.append(
             f'<circle cx="{lx + 5}" cy="{ly - 4}" r="5" fill="{color}"/>'
             f'<text x="{lx + 18}" y="{ly}" font-family="{FONT}" font-size="13" '
@@ -128,7 +105,7 @@ def build(d):
         )
 
     nl = "\n  "
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="GitHub-statistik för {USER}: {d['repos']} repositories, {d['stars']} stjärnor, {d['followers']} följare">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Mest använda språk för {USER}: {', '.join(d['langs'])}">
   <defs>
     <clipPath id="rounded"><rect x="{X}" y="70" width="{BW}" height="14" rx="7"/></clipPath>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
@@ -142,10 +119,6 @@ def build(d):
   <text x="30" y="40" font-family="{FONT}" font-size="15" font-weight="600"
         fill="{FG}" letter-spacing="0.4">{esc(USER)}</text>
   <line x1="30" y1="52" x2="{W - 30}" y2="52" stroke="{BORDER}"/>
-
-  {nl.join(left)}
-
-  <line x1="265" y1="66" x2="265" y2="180" stroke="{BORDER}"/>
 
   <text x="{X}" y="60" font-family="{FONT}" font-size="11" fill="{MUTED}"
         letter-spacing="0.6">MOST USED LANGUAGES</text>
@@ -164,8 +137,7 @@ if __name__ == "__main__":
     else:
         print(f"Hämtar statistik för {USER} ...")
         data = collect()
-        print(f"  {data['repos']} repon, {data['stars']} stjärnor, "
-              f"{data['followers']} följare, {len(data['langs'])} språk")
+        print(f"  {len(data['langs'])} språk")
 
     OUT.write_text(build(data), encoding="utf-8")
     print(f"Skrev {OUT} ({OUT.stat().st_size} bytes)")
