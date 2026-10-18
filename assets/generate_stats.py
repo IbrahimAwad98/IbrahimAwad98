@@ -22,16 +22,8 @@ BG, FG, MUTED = "#0B1020", "#C9D1D9", "#8B949E"
 ACCENT, ACCENT2, BORDER = "#7C3AED", "#22D3EE", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
-# Officiella GitHub-språkfärger för de vanligaste språken
-LANG_COLORS = {
-    "Rust": "#dea584", "C": "#B8C0CC", "C++": "#f34b7d", "C#": "#178600",
-    "Java": "#b07219", "Python": "#3572A5", "TypeScript": "#3178c6",
-    "JavaScript": "#f1e05a", "HTML": "#e34c26", "CSS": "#563d7c",
-    "Assembly": "#6E4C13", "Shell": "#89e051", "Makefile": "#427819",
-    "Go": "#00ADD8", "Kotlin": "#A97BFF", "Swift": "#F05138",
-    "Ruby": "#701516", "PHP": "#4F5D95", "Dart": "#00B4AB",
-}
-FALLBACK = "#6e7681"
+# Palett efter rang (störst språk först), inte per språk
+PALETTE = ["#4AD5ED", "#A68CF8", "#ED6FB5", "#F6BD36", "#50D49A", "#6AA7F8"]
 
 
 def api(path):
@@ -89,7 +81,7 @@ def build(d):
     for i, (lang, byts) in enumerate(d["langs"].items()):
         frac = byts / total
         w = frac * BW
-        color = LANG_COLORS.get(lang, FALLBACK)
+        color = PALETTE[i % len(PALETTE)]
         bar.append(f'<rect x="{X + off:.1f}" y="70" width="{max(w, 1):.1f}" '
                    f'height="14" fill="{color}"/>')
         off += w
