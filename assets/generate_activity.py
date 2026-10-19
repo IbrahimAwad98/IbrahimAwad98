@@ -93,7 +93,7 @@ def demo():
 
 
 # Palett för aktivitetskortet (GitHub Dark). Streak-kortet behåller sina färger.
-C_BG, C_CARD, C_BORDER = "#0D1117", "#161B22", "#30363D"
+C_BG, C_CARD, C_BORDER = "#080D1B", "#0F1629", "#2A3350"
 C_FG, C_MUTED, C_DIM = "#E6EDF3", "#8B949E", "#6E7681"
 C_PURPLE, C_CYAN = "#A855F7", "#00D9FF"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -171,6 +171,15 @@ def build(series):
         return T + PH - (v / ymax) * PH
 
     nl = "\n  "
+
+    def waves(x0, y0, color, flip):
+        k = -1 if flip else 1
+        return "".join(
+            f'<path d="M{x0},{y0 - i * 10} c{60 * k},-18 {110 * k},-18 {170 * k},-2 '
+            f's{110 * k},18 {170 * k},-6" fill="none" stroke="{color}" '
+            f'stroke-width="1" stroke-opacity="{0.18 - i * 0.04:.2f}"/>'
+            for i in range(4)
+        )
 
     # Horisontella gridlinjer + y-etiketter
     grid = []
@@ -255,12 +264,26 @@ def build(series):
       <feGaussianBlur stdDeviation="3"/>
     </filter>
     <clipPath id="plot"><rect x="{L}" y="{T - 20}" width="{PW}" height="{PH + 20}"/></clipPath>
-    <clipPath id="card"><rect width="{W}" height="{H}" rx="14"/></clipPath>
+    <radialGradient id="glowL" cx="0" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="{C_PURPLE}" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="{C_PURPLE}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="1" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="{C_CYAN}" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="{C_CYAN}" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="card"><rect width="{W}" height="{H}" rx="16"/></clipPath>
     <path id="ln" d="{line}"/>
   </defs>
 
-  <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="{C_BG}" stroke="{C_BORDER}"/>
-  <rect x="0" y="0" width="{W}" height="3" fill="url(#stroke)" clip-path="url(#card)"/>
+  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="16" fill="{C_BG}" stroke="url(#stroke)" stroke-width="1.5"/>
+  <g clip-path="url(#card)">
+    <rect width="{W}" height="{H}" fill="url(#glowL)"/>
+    <rect width="{W}" height="{H}" fill="url(#glowR)"/>
+    <rect x="0" y="0" width="{W}" height="3" fill="url(#stroke)"/>
+    {waves(-20, H - 22, C_PURPLE, False)}
+    {waves(W + 20, H - 22, C_CYAN, True)}
+  </g>
 
   <text x="{L - 12}" y="40" font-family="{FONT}" font-size="16" font-weight="600" fill="{C_FG}">Contributions &#8212; {heading}</text>
   <text x="{L - 12}" y="60" font-family="{FONT}" font-size="11.5" fill="{C_MUTED}">Daily GitHub activity</text>
