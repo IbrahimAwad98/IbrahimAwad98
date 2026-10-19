@@ -111,7 +111,7 @@ def esc(s):
 
 
 def build(d):
-    W, H = 880, 200
+    W, H = 880, 186
     X, BW = 30, W - 60
     total = sum(d["langs"].values()) or 1
     langs = list(d["langs"].items())
@@ -130,7 +130,7 @@ def build(d):
         )
 
     # --- stapel ---
-    BY, BH = 90, 12
+    BY, BH = 76, 12
     bar, off = [], 0.0
     for i, (lang, byts) in enumerate(langs):
         w = byts / total * BW
@@ -145,7 +145,7 @@ def build(d):
         color = color_of(i, lang)
         pct = byts / total * 100
         col, row = i % 3, i // 3
-        lx, ly = X + col * COLW, 140 + row * 32
+        lx, ly = X + col * COLW, 126 + row * 32
         if lang in LOGOS:
             sid = f"lg{i}"
             symbols.append(logo_symbol(lang, sid))
@@ -195,9 +195,8 @@ def build(d):
     {waves(W + 20, H - 22, C_CYAN, True)}
   </g>
 
-  <text x="{X}" y="40" font-family="{FONT}" font-size="16" font-weight="700" fill="{C_FG}">{esc(USER)}</text>
-  <text x="{X}" y="60" font-family="{FONT}" font-size="11" letter-spacing="1.5" fill="{C_MUTED}">MOST USED LANGUAGES</text>
-  <line x1="{X}" y1="72" x2="{W - X}" y2="72" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <text x="{X}" y="42" font-family="{FONT}" font-size="12" letter-spacing="1.5" fill="{C_MUTED}">MOST USED LANGUAGES</text>
+  <line x1="{X}" y1="56" x2="{W - X}" y2="56" stroke="#FFFFFF" stroke-opacity="0.08"/>
 
   <g opacity="0.4" filter="url(#soft)">
   {nl.join(bar)}
