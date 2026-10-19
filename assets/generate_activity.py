@@ -92,114 +92,192 @@ def demo():
     return out
 
 
+# Palett för aktivitetskortet (GitHub Dark). Streak-kortet behåller sina färger.
+C_BG, C_CARD, C_BORDER = "#0D1117", "#161B22", "#30363D"
+C_FG, C_MUTED, C_DIM = "#E6EDF3", "#8B949E", "#6E7681"
+C_PURPLE, C_CYAN = "#A855F7", "#00D9FF"
+MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def nice_step(peak, ticks=4):
+    """Avrundar y-steget till 1/2/2.5/5 × 10^k så etiketterna blir läsbara."""
+    import math
+    raw = max(peak, 1) / ticks
+    mag = 10 ** math.floor(math.log10(raw))
+    for f in (1, 2, 2.5, 5, 10):
+        if f * mag >= raw:
+            step = f * mag
+            return int(step) if step >= 1 else step
+    return mag * 10
+
+
+def smooth_path(pts):
+    """Monoton kubisk interpolation (Fritsch–Carlson).
+
+    Ger en mjuk kurva som aldrig över-/underskjuter datapunkterna:
+    nollor stannar på noll och toppar träffar exakt sitt värde.
+    """
+    import math
+    n = len(pts)
+    if n < 2:
+        return ""
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    dx = [xs[i + 1] - xs[i] for i in range(n - 1)]
+    m = [(ys[i + 1] - ys[i]) / dx[i] for i in range(n - 1)]
+    t = [0.0] * n
+    t[0], t[-1] = m[0], m[-1]
+    for i in range(1, n - 1):
+        t[i] = 0.0 if m[i - 1] * m[i] <= 0 else (m[i - 1] + m[i]) / 2
+    for i in range(n - 1):
+        if m[i] == 0:
+            t[i] = t[i + 1] = 0.0
+            continue
+        a, b = t[i] / m[i], t[i + 1] / m[i]
+        s = a * a + b * b
+        if s > 9:
+            tau = 3 / math.sqrt(s)
+            t[i], t[i + 1] = tau * a * m[i], tau * b * m[i]
+    d = [f"M{xs[0]:.1f},{ys[0]:.1f}"]
+    for i in range(n - 1):
+        h = dx[i] / 3
+        d.append(f"C{xs[i] + h:.1f},{ys[i] + t[i] * h:.1f} "
+                 f"{xs[i + 1] - h:.1f},{ys[i + 1] - t[i + 1] * h:.1f} "
+                 f"{xs[i + 1]:.1f},{ys[i + 1]:.1f}")
+    return " ".join(d)
+
+
 def build(series):
-    W, H = 880, 260
-    L, R, T, B = 52, 24, 46, 42          # marginaler
+    W, H = 880, 320
+    L, R, T, B = 60, 28, 92, 46          # marginaler runt plottytan
     PW, PH = W - L - R, H - T - B
 
     counts = [c for _, c in series]
-    peak = max(counts) or 1
-    # runda upp y-max till närmaste jämna tal för snyggare gridlinjer
-    ymax = peak if peak % 2 == 0 else peak + 1
+    peak = max(counts)
+    step = nice_step(peak)
+    ticks = max(1, -(-peak // step)) if step >= 1 else 4
+    ymax = step * ticks
+    if peak >= ymax:                      # lite luft ovanför toppen
+        ymax += step
+        ticks += 1
     n = len(series)
-    step = PW / (n - 1) if n > 1 else PW
+    stepx = PW / (n - 1) if n > 1 else PW
 
     def px(i):
-        return L + i * step
+        return L + i * stepx
 
     def py(v):
         return T + PH - (v / ymax) * PH
 
-    # gridlinjer + y-etiketter
+    nl = "\n  "
+
+    # Horisontella gridlinjer + y-etiketter
     grid = []
-    ticks = 4
-    for t in range(ticks + 1):
-        v = ymax * t / ticks
+    for k in range(ticks + 1):
+        v = step * k
         y = py(v)
         grid.append(
             f'<line x1="{L}" y1="{y:.1f}" x2="{L + PW}" y2="{y:.1f}" '
-            f'stroke="{BORDER}" stroke-width="1"/>'
-            f'<text x="{L - 10}" y="{y + 4:.1f}" text-anchor="end" '
-            f'font-family="{FONT}" font-size="10" fill="{MUTED}">{v:.0f}</text>'
+            f'stroke="#FFFFFF" stroke-opacity="{0.10 if k == 0 else 0.05}" stroke-width="1"/>'
+            f'<text x="{L - 12}" y="{y + 3.5:.1f}" text-anchor="end" '
+            f'font-family="{FONT}" font-size="10.5" fill="{C_DIM}">{v:g}</text>'
         )
 
     pts = [(px(i), py(c)) for i, (_, c) in enumerate(series)]
-    line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-    area = (f"{L},{T + PH} " + line + f" {L + PW},{T + PH}")
+    line = smooth_path(pts)
+    area = f"{line} L{L + PW:.1f},{T + PH:.1f} L{L:.1f},{T + PH:.1f} Z"
 
-    # Punktmarkörer bara när de får plats — vid långa intervall blir de gyttrig
-    dots = ""
-    if n <= 60:
-        dots = "".join(
-            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{BG}" '
-            f'stroke="{ACCENT2}" stroke-width="2"/>'
-            for x, y in pts
-        )
-
-    # x-etiketter: månadsnamn vid långa intervall, dagsnummer vid korta
-    MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    # X-etiketter: varje månadsskifte vid långa intervall, dagsnummer vid korta
     xlab = []
     if n > 60:
-        seen = set()
         for i, (date, _) in enumerate(series):
-            month = date[:7]
-            if month not in seen:
-                seen.add(month)
-                if i > 6 and i < n - 6:       # undvik krock med kanterna
-                    xlab.append(
-                        f'<text x="{px(i):.1f}" y="{T + PH + 20}" '
-                        f'text-anchor="middle" font-family="{FONT}" '
-                        f'font-size="10" fill="{MUTED}">'
-                        f'{MONTHS[int(date[5:7]) - 1]}</text>'
-                    )
+            if date[8:10] == "01":
+                x = px(i)
+                xlab.append(
+                    f'<line x1="{x:.1f}" y1="{T + PH}" x2="{x:.1f}" y2="{T + PH + 5}" '
+                    f'stroke="#FFFFFF" stroke-opacity="0.12"/>'
+                    f'<text x="{x:.1f}" y="{T + PH + 22}" text-anchor="middle" '
+                    f'font-family="{FONT}" font-size="10.5" fill="{C_MUTED}">'
+                    f'{MONTHS[int(date[5:7]) - 1]}</text>'
+                )
     else:
         for i, (date, _) in enumerate(series):
             if i % 5 == 0 or i == n - 1:
                 xlab.append(
-                    f'<text x="{px(i):.1f}" y="{T + PH + 20}" text-anchor="middle" '
-                    f'font-family="{FONT}" font-size="10" '
-                    f'fill="{MUTED}">{date[8:10].lstrip("0")}</text>'
+                    f'<text x="{px(i):.1f}" y="{T + PH + 22}" text-anchor="middle" '
+                    f'font-family="{FONT}" font-size="10.5" fill="{C_MUTED}">'
+                    f'{date[8:10].lstrip("0")}</text>'
                 )
+
+    # Toppmarkering
+    pi = counts.index(peak)
+    pxk, pyk = pts[pi]
+    lx = min(max(pxk, L + 14), L + PW - 14)
+    peak_mark = (
+        f'<circle cx="{pxk:.1f}" cy="{pyk:.1f}" r="7" fill="{C_CYAN}" fill-opacity="0.18"/>'
+        f'<circle cx="{pxk:.1f}" cy="{pyk:.1f}" r="3.2" fill="{C_BG}" stroke="{C_CYAN}" stroke-width="2"/>'
+        f'<text x="{lx:.1f}" y="{pyk - 12:.1f}" text-anchor="middle" font-family="{FONT}" '
+        f'font-size="10.5" font-weight="600" fill="{C_FG}">{peak}</text>'
+    )
 
     total = sum(counts)
     first, last = series[0][0], series[-1][0]
-    heading = ("last 12 months" if n > 300 else
-               f"last {n // 30} months" if n > 60 else
-               f"last {n} days")
-    lw = 1.6 if n > 60 else 2.5
-    nl = "\n  "
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Bidrag per dag för {USER} mellan {first} och {last}. Totalt {total} bidrag, som mest {peak} på en dag.">
+    heading = ("Last 12 Months" if n > 300 else
+               f"Last {n // 30} Months" if n > 60 else
+               f"Last {n} Days")
+
+    # Statistikrutor uppe till höger
+    def pill(x, label, value):
+        w = 112
+        return (
+            f'<rect x="{x}" y="22" width="{w}" height="46" rx="10" fill="{C_CARD}" stroke="{C_BORDER}"/>'
+            f'<text x="{x + 14}" y="39" font-family="{FONT}" font-size="9.5" letter-spacing="1" '
+            f'fill="{C_DIM}">{label}</text>'
+            f'<text x="{x + 14}" y="59" font-family="{FONT}" font-size="17" font-weight="700" '
+            f'fill="url(#stroke)">{value:,}</text>'
+        )
+
+    pills = pill(W - R - 112, "PEAK / DAY", peak) + pill(W - R - 112 - 10 - 112, "TOTAL", total)
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Daily GitHub contributions for {USER} from {first} to {last}: {total} total, peak {peak} in one day.">
   <defs>
-    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="{ACCENT}" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="{ACCENT2}" stop-opacity="0.02"/>
-    </linearGradient>
     <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{ACCENT}"/>
-      <stop offset="100%" stop-color="{ACCENT2}"/>
+      <stop offset="0%" stop-color="{C_PURPLE}"/>
+      <stop offset="100%" stop-color="{C_CYAN}"/>
     </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="{C_PURPLE}" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="{C_CYAN}" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="{C_CYAN}" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="glow" x="-5%" y="-20%" width="110%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <clipPath id="plot"><rect x="{L}" y="{T - 20}" width="{PW}" height="{PH + 20}"/></clipPath>
+    <clipPath id="card"><rect width="{W}" height="{H}" rx="14"/></clipPath>
+    <path id="ln" d="{line}"/>
   </defs>
 
-  <rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>
-  <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#stroke)"/>
+  <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="{C_BG}" stroke="{C_BORDER}"/>
+  <rect x="0" y="0" width="{W}" height="3" fill="url(#stroke)" clip-path="url(#card)"/>
 
-  <text x="{L - 10}" y="26" font-family="{FONT}" font-size="13"
-        font-weight="600" fill="{FG}">Contributions — {heading}</text>
-  <text x="{W - R}" y="26" text-anchor="end" font-family="{FONT}"
-        font-size="11" fill="{MUTED}">{total} total &#183; peak {peak}</text>
+  <text x="{L - 12}" y="40" font-family="{FONT}" font-size="16" font-weight="600" fill="{C_FG}">Contributions &#8212; {heading}</text>
+  <text x="{L - 12}" y="60" font-family="{FONT}" font-size="11.5" fill="{C_MUTED}">Daily GitHub activity</text>
+  {pills}
 
   {nl.join(grid)}
 
-  <polygon points="{area}" fill="url(#fill)"/>
-  <polyline points="{line}" fill="none" stroke="url(#stroke)"
-            stroke-width="{lw}" stroke-linejoin="round" stroke-linecap="round"/>
-  {dots}
+  <g clip-path="url(#plot)" fill="none" stroke="url(#stroke)" stroke-linejoin="round" stroke-linecap="round">
+    <path d="{area}" fill="url(#fill)" stroke="none"/>
+    <use href="#ln" stroke-width="5" stroke-opacity="0.35" filter="url(#glow)"/>
+    <use href="#ln" stroke-width="1.8"/>
+  </g>
+  {peak_mark}
 
   {nl.join(xlab)}
 </svg>
 '''
-
 
 
 STREAK_OUT = Path(__file__).parent / "streak.svg"
