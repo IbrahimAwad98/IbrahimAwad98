@@ -348,55 +348,91 @@ def short_date(iso):
 
 
 def build_streak(st):
-    W, H = 880, 190
+    W, H = 880, 220
     third = W / 3
-    r = 46
-    cx, cy = W / 2, 96
+    cx, cy, r = W / 2, 98, 52
+    S_BG, S_FG, S_MUTED, S_DIM = "#080D1B", "#F0F6FC", "#8B949E", "#6E7681"
+
+    def rng(a, b, year=False):
+        if not (a and b):
+            return ""
+        ya, yb = (f" {a[:4]}", f" {b[:4]}") if year else ("", "")
+        return f"{short_date(a)}{ya} &#8211; {short_date(b)}{yb}"
 
     def block(x, value, label, sub):
         return (
-            f'<text x="{x:.0f}" y="86" text-anchor="middle" font-family="{FONT}" '
-            f'font-size="34" font-weight="700" fill="{FG}">{value}</text>'
-            f'<text x="{x:.0f}" y="112" text-anchor="middle" font-family="{FONT}" '
-            f'font-size="12" fill="{MUTED}" letter-spacing="0.5">{label}</text>'
+            f'<text x="{x:.0f}" y="108" text-anchor="middle" font-family="{FONT}" '
+            f'font-size="42" font-weight="800" fill="{S_FG}">{value:,}</text>'
             f'<text x="{x:.0f}" y="134" text-anchor="middle" font-family="{FONT}" '
-            f'font-size="10.5" fill="{MUTED}" opacity="0.75">{sub}</text>'
+            f'font-size="11" letter-spacing="1.5" fill="{S_MUTED}">{label}</text>'
+            f'<text x="{x:.0f}" y="154" text-anchor="middle" font-family="{FONT}" '
+            f'font-size="10.5" fill="{S_DIM}">{sub}</text>'
         )
 
-    cur_sub = (f"{short_date(st['current_range'][0])} – "
-               f"{short_date(st['current_range'][1])}") if st["current"] else "no active streak"
-    long_sub = (f"{short_date(st['longest_range'][0])} – "
-                f"{short_date(st['longest_range'][1])}") if st["longest"] else ""
+    # Dekorativa vågor i nedre hörnen (klipps av kortet)
+    def waves(x0, y0, color, flip):
+        k = -1 if flip else 1
+        out = []
+        for i in range(4):
+            dy = i * 10
+            out.append(
+                f'<path d="M{x0},{y0 - dy} c{60 * k},-18 {110 * k},-18 {170 * k},-2 '
+                f's{110 * k},18 {170 * k},-6" fill="none" stroke="{color}" '
+                f'stroke-width="1" stroke-opacity="{0.22 - i * 0.045:.2f}"/>'
+            )
+        return "".join(out)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Contribution streaks: {st['total']} contributions in the last 12 months, current streak {st['current']} days, longest streak {st['longest']} days">
   <defs>
     <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{ACCENT}"/>
-      <stop offset="100%" stop-color="{ACCENT2}"/>
+      <stop offset="0%" stop-color="{C_PURPLE}"/>
+      <stop offset="100%" stop-color="{C_CYAN}"/>
     </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="{C_PURPLE}"/>
+      <stop offset="100%" stop-color="{C_CYAN}"/>
+    </linearGradient>
+    <linearGradient id="sep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="0" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="{C_PURPLE}" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="{C_PURPLE}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="1" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="{C_CYAN}" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="{C_CYAN}" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="card"><rect x="0" y="0" width="{W}" height="{H}" rx="16"/></clipPath>
   </defs>
 
-  <rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>
-  <rect x="0" y="0" width="{W}" height="3" rx="1.5" fill="url(#edge)"/>
+  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="16" fill="{S_BG}" stroke="url(#edge)" stroke-width="1.5"/>
+  <g clip-path="url(#card)">
+    <rect width="{W}" height="{H}" fill="url(#glowL)"/>
+    <rect width="{W}" height="{H}" fill="url(#glowR)"/>
+    <rect x="0" y="0" width="{W}" height="3" fill="url(#edge)"/>
+    {waves(-20, H - 22, C_PURPLE, False)}
+    {waves(W + 20, H - 22, C_CYAN, True)}
+  </g>
 
-  <line x1="{third:.0f}" y1="42" x2="{third:.0f}" y2="150" stroke="{BORDER}"/>
-  <line x1="{2 * third:.0f}" y1="42" x2="{2 * third:.0f}" y2="150" stroke="{BORDER}"/>
+  <line x1="{third:.0f}" y1="40" x2="{third:.0f}" y2="{H - 40}" stroke="url(#sep)"/>
+  <line x1="{2 * third:.0f}" y1="40" x2="{2 * third:.0f}" y2="{H - 40}" stroke="url(#sep)"/>
 
-  {block(third / 2, st["total"], "TOTAL CONTRIBUTIONS", f"{short_date(st['first'])} – {short_date(st['last'])}")}
+  {block(third / 2, st["total"], "TOTAL CONTRIBUTIONS", rng(st["first"], st["last"], year=True))}
 
-  <circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r}" fill="none" stroke="{BORDER}" stroke-width="3"/>
-  <circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r}" fill="none" stroke="{ACCENT}" stroke-width="3"
-          stroke-linecap="round" stroke-dasharray="{2 * 3.14159 * r:.0f}"
-          stroke-dashoffset="{2 * 3.14159 * r * (1 - min(st['current'] / 14, 1)):.0f}"
-          transform="rotate(-90 {cx:.0f} {cy:.0f})"/>
-  <text x="{cx:.0f}" y="{cy + 10:.0f}" text-anchor="middle" font-family="{FONT}"
-        font-size="30" font-weight="700" fill="{FG}">{st['current']}</text>
-  <text x="{cx:.0f}" y="162" text-anchor="middle" font-family="{FONT}"
-        font-size="12" fill="{ACCENT2}" letter-spacing="0.5">CURRENT STREAK</text>
-  <text x="{cx:.0f}" y="{cy + 62:.0f}" text-anchor="middle" font-family="{FONT}"
-        font-size="10.5" fill="{MUTED}" opacity="0">{cur_sub}</text>
+  <circle cx="{cx:.0f}" cy="{cy}" r="{r}" fill="none" stroke="url(#ring)" stroke-width="7" stroke-opacity="0.55" filter="url(#soft)"/>
+  <circle cx="{cx:.0f}" cy="{cy}" r="{r}" fill="none" stroke="url(#ring)" stroke-width="4"/>
+  <text x="{cx:.0f}" y="{cy + 13}" text-anchor="middle" font-family="{FONT}"
+        font-size="38" font-weight="800" fill="{S_FG}">{st['current']}</text>
+  <text x="{cx:.0f}" y="{cy + r + 32}" text-anchor="middle" font-family="{FONT}"
+        font-size="11" letter-spacing="1.5" font-weight="600" fill="url(#edge)">CURRENT STREAK</text>
 
-  {block(2.5 * third, st["longest"], "LONGEST STREAK", long_sub)}
+  {block(2.5 * third, st["longest"], "LONGEST STREAK", rng(*st["longest_range"]))}
 </svg>
 '''
 
