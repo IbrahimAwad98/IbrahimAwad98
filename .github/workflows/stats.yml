@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - 'assets/generate_stats.py'
+      - 'assets/generate_activity.py'
       - '.github/workflows/stats.yml'
 
 permissions:
