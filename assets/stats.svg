@@ -37,20 +37,20 @@
   <line x1="30" y1="56" x2="850" y2="56" stroke="#FFFFFF" stroke-opacity="0.08"/>
 
   <g opacity="0.4" filter="url(#soft)">
-  <rect x="30.0" y="76" width="467.4" height="12" fill="#6EA8FE"/>
-  <rect x="497.4" y="76" width="126.1" height="12" fill="#A78BFA"/>
-  <rect x="623.5" y="76" width="97.8" height="12" fill="#E879C5"/>
-  <rect x="721.3" y="76" width="58.3" height="12" fill="#F6C453"/>
-  <rect x="779.6" y="76" width="55.6" height="12" fill="#5DD6A4"/>
-  <rect x="835.2" y="76" width="14.8" height="12" fill="#6AA7F8"/>
+  <rect x="30.0" y="76" width="467.5" height="12" fill="#6EA8FE"/>
+  <rect x="497.5" y="76" width="126.1" height="12" fill="#A78BFA"/>
+  <rect x="623.6" y="76" width="97.9" height="12" fill="#E879C5"/>
+  <rect x="721.4" y="76" width="58.3" height="12" fill="#F6C453"/>
+  <rect x="779.7" y="76" width="55.6" height="12" fill="#5DD6A4"/>
+  <rect x="835.3" y="76" width="14.7" height="12" fill="#6AA7F8"/>
   </g>
   <g clip-path="url(#barclip)">
-  <rect x="30.0" y="76" width="467.4" height="12" fill="#6EA8FE"/>
-  <rect x="497.4" y="76" width="126.1" height="12" fill="#A78BFA"/>
-  <rect x="623.5" y="76" width="97.8" height="12" fill="#E879C5"/>
-  <rect x="721.3" y="76" width="58.3" height="12" fill="#F6C453"/>
-  <rect x="779.6" y="76" width="55.6" height="12" fill="#5DD6A4"/>
-  <rect x="835.2" y="76" width="14.8" height="12" fill="#6AA7F8"/>
+  <rect x="30.0" y="76" width="467.5" height="12" fill="#6EA8FE"/>
+  <rect x="497.5" y="76" width="126.1" height="12" fill="#A78BFA"/>
+  <rect x="623.6" y="76" width="97.9" height="12" fill="#E879C5"/>
+  <rect x="721.4" y="76" width="58.3" height="12" fill="#F6C453"/>
+  <rect x="779.7" y="76" width="55.6" height="12" fill="#5DD6A4"/>
+  <rect x="835.3" y="76" width="14.7" height="12" fill="#6AA7F8"/>
   </g>
 
   <use href="#lg0" x="30" y="112" width="18" height="18" fill="#6EA8FE"/><circle cx="62" cy="121" r="3.5" fill="#6EA8FE"/><text x="72" y="126" font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#F0F6FC">C<tspan dx="8" font-weight="600" fill="#6EA8FE">57.0%</tspan></text>
