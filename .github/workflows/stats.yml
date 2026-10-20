@@ -46,4 +46,5 @@ jobs:
           git config user.email "193368218+IbrahimAwad98@users.noreply.github.com"
           git add assets/stats.svg assets/activity.svg assets/streak.svg
           git commit -m "chore: update stats card [skip ci]"
+          git pull --rebase origin main
           git push
