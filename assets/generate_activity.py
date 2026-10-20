@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Genererar assets/activity.svg — en linjegraf över bidrag per dag,
-självhostad ersättare för github-readme-activity-graph.
+Genererar assets/activity.svg — en linjegraf som jämför bidrag per dag
+för föregående och innevarande kalenderår (t.ex. 2025 vs 2026), samt
+assets/streak.svg ur samma dagsdata.
 
-Data hämtas via GitHubs GraphQL-API (contributionsCollection).
+Data hämtas via GitHubs GraphQL-API (contributionsCollection), ett anrop
+per kalenderår (API:et tillåter max ett års spann per anrop).
 OBS: det inbyggda GITHUB_TOKEN i Actions saknar ofta behörighet för
 den queryn. Skapa i så fall en classic PAT med scope `read:user`,
 lägg den som repo-secret PAT och skicka in den som GH_GRAPHQL_TOKEN.
@@ -14,20 +16,19 @@ Testkörning utan nätverk:
     python3 generate_activity.py --demo
 """
 import json
+import math
 import os
 import sys
 import urllib.request
 import urllib.error
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 USER = os.environ.get("STATS_USER", "IbrahimAwad98")
 TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
-DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # 31, 90, 180 eller 365
+DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # fönster för streak-kortet
 
-BG, FG, MUTED = "#0B1020", "#C9D1D9", "#8B949E"
-ACCENT, ACCENT2, BORDER = "#9333EA", "#06B6D4", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 QUERY = """
@@ -43,15 +44,19 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 """
 
 
-def fetch():
-    to = datetime.now(timezone.utc)
-    frm = to - timedelta(days=DAYS - 1)
+def fetch_year(year, today):
+    """[(iso-datum, antal)] för ett kalenderår, aldrig bortom dagens datum.
+
+    Framtida dagar utelämnas helt i stället för att bli nollor — annars
+    skulle kurvan för innevarande år få en falsk platt svans.
+    """
+    end = min(date(year, 12, 31), today)
     body = json.dumps({
         "query": QUERY,
         "variables": {
             "login": USER,
-            "from": frm.strftime("%Y-%m-%dT00:00:00Z"),
-            "to": to.strftime("%Y-%m-%dT23:59:59Z"),
+            "from": f"{year}-01-01T00:00:00Z",
+            "to": f"{end.isoformat()}T23:59:59Z",
         },
     }).encode()
 
@@ -72,23 +77,27 @@ def fetch():
 
     weeks = (payload["data"]["user"]["contributionsCollection"]
              ["contributionCalendar"]["weeks"])
-    days = [d for w in weeks for d in w["contributionDays"]]
-    days.sort(key=lambda d: d["date"])
-    return [(d["date"], d["contributionCount"]) for d in days][-DAYS:]
+    return sorted(
+        (d["date"], d["contributionCount"])
+        for w in weeks for d in w["contributionDays"]
+        if d["date"][:4] == str(year) and d["date"] <= end.isoformat()
+    )
 
 
-def demo():
+def demo(years, today):
     import random
     random.seed(3)
-    end = datetime(2026, 8, 2, tzinfo=timezone.utc)
-    base = end - timedelta(days=DAYS - 1)
-    out = []
-    for i in range(DAYS):
-        d = base + timedelta(days=i)
-        n = max(0, int(random.gauss(4, 3)))
-        if d.weekday() >= 5:
-            n = max(0, n - 2)
-        out.append((d.strftime("%Y-%m-%d"), n))
+    out = {}
+    for y in years:
+        end = min(date(y, 12, 31), today)
+        d, series = date(y, 1, 1), []
+        while d <= end:
+            n = max(0, int(random.gauss(4, 3)))
+            if d.weekday() >= 5:
+                n = max(0, n - 2)
+            series.append((d.isoformat(), n))
+            d += timedelta(days=1)
+        out[y] = series
     return out
 
 
@@ -98,11 +107,17 @@ C_FG, C_MUTED, C_DIM = "#E6EDF3", "#8B949E", "#6E7681"
 C_PURPLE, C_CYAN = "#A855F7", "#00D9FF"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+SLOTS = 366   # x-axeln indexeras via skottåret 2024 så 29 feb får en egen plats
+
+
+def slot(iso):
+    """Dag-i-året (0–365) oberoende av år, så 15 mar 2025 och 2026 får samma x."""
+    _, m, d = (int(s) for s in iso.split("-"))
+    return date(2024, m, d).timetuple().tm_yday - 1
 
 
 def nice_step(peak, ticks=4):
     """Avrundar y-steget till 1/2/2.5/5 × 10^k så etiketterna blir läsbara."""
-    import math
     raw = max(peak, 1) / ticks
     mag = 10 ** math.floor(math.log10(raw))
     for f in (1, 2, 2.5, 5, 10):
@@ -112,60 +127,24 @@ def nice_step(peak, ticks=4):
     return mag * 10
 
 
-def smooth_path(pts):
-    """Monoton kubisk interpolation (Fritsch–Carlson).
-
-    Ger en mjuk kurva som aldrig över-/underskjuter datapunkterna:
-    nollor stannar på noll och toppar träffar exakt sitt värde.
-    """
-    import math
-    n = len(pts)
-    if n < 2:
-        return ""
-    xs = [p[0] for p in pts]
-    ys = [p[1] for p in pts]
-    dx = [xs[i + 1] - xs[i] for i in range(n - 1)]
-    m = [(ys[i + 1] - ys[i]) / dx[i] for i in range(n - 1)]
-    t = [0.0] * n
-    t[0], t[-1] = m[0], m[-1]
-    for i in range(1, n - 1):
-        t[i] = 0.0 if m[i - 1] * m[i] <= 0 else (m[i - 1] + m[i]) / 2
-    for i in range(n - 1):
-        if m[i] == 0:
-            t[i] = t[i + 1] = 0.0
-            continue
-        a, b = t[i] / m[i], t[i + 1] / m[i]
-        s = a * a + b * b
-        if s > 9:
-            tau = 3 / math.sqrt(s)
-            t[i], t[i + 1] = tau * a * m[i], tau * b * m[i]
-    d = [f"M{xs[0]:.1f},{ys[0]:.1f}"]
-    for i in range(n - 1):
-        h = dx[i] / 3
-        d.append(f"C{xs[i] + h:.1f},{ys[i] + t[i] * h:.1f} "
-                 f"{xs[i + 1] - h:.1f},{ys[i + 1] - t[i + 1] * h:.1f} "
-                 f"{xs[i + 1]:.1f},{ys[i + 1]:.1f}")
-    return " ".join(d)
-
-
-def build(series):
-    W, H = 880, 320
-    L, R, T, B = 60, 28, 92, 46          # marginaler runt plottytan
+def build(data):
+    """data: {år: [(iso-datum, antal)]} — två år, färgas lila resp. cyan."""
+    W, H = 880, 360
+    L, R, T, B = 56, 28, 92, 86          # marginaler runt plottytan
     PW, PH = W - L - R, H - T - B
+    years = sorted(data)
+    colors = dict(zip(years, (C_PURPLE, C_CYAN)))
 
-    counts = [c for _, c in series]
-    peak = max(counts)
+    peak = max((c for s in data.values() for _, c in s), default=0)
     step = nice_step(peak)
     ticks = max(1, -(-peak // step)) if step >= 1 else 4
     ymax = step * ticks
     if peak >= ymax:                      # lite luft ovanför toppen
         ymax += step
         ticks += 1
-    n = len(series)
-    stepx = PW / (n - 1) if n > 1 else PW
 
     def px(i):
-        return L + i * stepx
+        return L + i * PW / (SLOTS - 1)
 
     def py(v):
         return T + PH - (v / ymax) * PH
@@ -188,78 +167,73 @@ def build(series):
         y = py(v)
         grid.append(
             f'<line x1="{L}" y1="{y:.1f}" x2="{L + PW}" y2="{y:.1f}" '
-            f'stroke="#FFFFFF" stroke-opacity="{0.10 if k == 0 else 0.05}" stroke-width="1"/>'
+            f'stroke="#FFFFFF" stroke-opacity="{0.10 if k == 0 else 0.05}"/>'
             f'<text x="{L - 12}" y="{y + 3.5:.1f}" text-anchor="end" '
             f'font-family="{FONT}" font-size="10.5" fill="{C_DIM}">{v:g}</text>'
         )
 
-    pts = [(px(i), py(c)) for i, (_, c) in enumerate(series)]
-    line = smooth_path(pts)
-    area = f"{line} L{L + PW:.1f},{T + PH:.1f} L{L:.1f},{T + PH:.1f} Z"
-
-    # X-etiketter: varje månadsskifte vid långa intervall, dagsnummer vid korta
+    # Vertikala gridlinjer + månadsetiketter vid varje månadsskifte
     xlab = []
-    if n > 60:
-        for i, (date, _) in enumerate(series):
-            if date[8:10] == "01":
-                x = px(i)
-                xlab.append(
-                    f'<line x1="{x:.1f}" y1="{T + PH}" x2="{x:.1f}" y2="{T + PH + 5}" '
-                    f'stroke="#FFFFFF" stroke-opacity="0.12"/>'
-                    f'<text x="{x:.1f}" y="{T + PH + 22}" text-anchor="middle" '
-                    f'font-family="{FONT}" font-size="10.5" fill="{C_MUTED}">'
-                    f'{MONTHS[int(date[5:7]) - 1]}</text>'
-                )
-    else:
-        for i, (date, _) in enumerate(series):
-            if i % 5 == 0 or i == n - 1:
-                xlab.append(
-                    f'<text x="{px(i):.1f}" y="{T + PH + 22}" text-anchor="middle" '
-                    f'font-family="{FONT}" font-size="10.5" fill="{C_MUTED}">'
-                    f'{date[8:10].lstrip("0")}</text>'
-                )
-
-    # Toppmarkering
-    pi = counts.index(peak)
-    pxk, pyk = pts[pi]
-    lx = min(max(pxk, L + 14), L + PW - 14)
-    peak_mark = (
-        f'<circle cx="{pxk:.1f}" cy="{pyk:.1f}" r="7" fill="{C_CYAN}" fill-opacity="0.18"/>'
-        f'<circle cx="{pxk:.1f}" cy="{pyk:.1f}" r="3.2" fill="{C_BG}" stroke="{C_CYAN}" stroke-width="2"/>'
-        f'<text x="{lx:.1f}" y="{pyk - 12:.1f}" text-anchor="middle" font-family="{FONT}" '
-        f'font-size="10.5" font-weight="600" fill="{C_FG}">{peak}</text>'
-    )
-
-    total = sum(counts)
-    first, last = series[0][0], series[-1][0]
-    heading = ("Last 12 Months" if n > 300 else
-               f"Last {n // 30} Months" if n > 60 else
-               f"Last {n} Days")
-
-    # Statistikrutor uppe till höger
-    def pill(x, label, value):
-        w = 112
-        return (
-            f'<rect x="{x}" y="22" width="{w}" height="46" rx="10" fill="{C_CARD}" stroke="{C_BORDER}"/>'
-            f'<text x="{x + 14}" y="39" font-family="{FONT}" font-size="9.5" letter-spacing="1" '
-            f'fill="{C_DIM}">{label}</text>'
-            f'<text x="{x + 14}" y="59" font-family="{FONT}" font-size="17" font-weight="700" '
-            f'fill="url(#stroke)">{value:,}</text>'
+    for m in range(12):
+        x = px(slot(f"2024-{m + 1:02d}-01"))
+        xlab.append(
+            f'<line x1="{x:.1f}" y1="{T}" x2="{x:.1f}" y2="{T + PH + 5}" '
+            f'stroke="#FFFFFF" stroke-opacity="0.05"/>'
+            f'<text x="{x:.1f}" y="{T + PH + 22}" text-anchor="middle" '
+            f'font-family="{FONT}" font-size="10.5" fill="{C_MUTED}">{MONTHS[m]}</text>'
         )
 
-    pills = pill(W - R - 112, "PEAK / DAY", peak) + pill(W - R - 112 - 10 - 112, "TOTAL", total)
+    # En polyline per år — rådata, ingen utjämning. Serien slutar vid sista
+    # registrerade dagen så framtiden lämnas tom.
+    series_svg = []
+    for y in years:
+        pts = [(px(slot(d)), py(c)) for d, c in data[y]]
+        if not pts:
+            continue
+        line = "M" + " L".join(f"{x:.1f},{yy:.1f}" for x, yy in pts)
+        area = f"{line} L{pts[-1][0]:.1f},{T + PH:.1f} L{pts[0][0]:.1f},{T + PH:.1f} Z"
+        series_svg.append(
+            f'<g clip-path="url(#plot)" fill="none" stroke="{colors[y]}" '
+            f'stroke-linejoin="round" stroke-linecap="round">'
+            f'<path d="{area}" fill="url(#fill{y})" stroke="none"/>'
+            f'<path d="{line}" stroke-width="4" stroke-opacity="0.35" filter="url(#glow)"/>'
+            f'<path d="{line}" stroke-width="1.4"/></g>'
+        )
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Daily GitHub contributions for {USER} from {first} to {last}: {total} total, peak {peak} in one day.">
+    # Centrerad legend under grafen: "2025 (617 contributions)"
+    totals = {y: sum(c for _, c in data[y]) for y in years}
+    labels = {y: f"{y} ({totals[y]:,} contributions)" for y in years}
+    SW, GAP, PAD, CW = 26, 8, 36, 6.2     # swatch, mellanrum, avstånd, ~px/tecken
+    widths = [SW + GAP + len(labels[y]) * CW for y in years]
+    x = W / 2 - (sum(widths) + PAD * (len(years) - 1)) / 2
+    ly = H - 24
+    legend = []
+    for y, w in zip(years, widths):
+        legend.append(
+            f'<line x1="{x:.1f}" y1="{ly}" x2="{x + SW:.1f}" y2="{ly}" stroke="{colors[y]}" '
+            f'stroke-width="2.5" stroke-linecap="round"/>'
+            f'<text x="{x + SW + GAP:.1f}" y="{ly + 3.8}" font-family="{FONT}" font-size="11.5" '
+            f'fill="{C_MUTED}"><tspan font-weight="600" fill="{colors[y]}">{y}</tspan> '
+            f'({totals[y]:,} contributions)</text>'
+        )
+        x += w + PAD
+
+    title = " vs ".join(f'<tspan fill="{colors[y]}">{y}</tspan>' for y in years)
+    aria = ", ".join(f"{y}: {totals[y]} contributions" for y in years)
+    fills = "".join(
+        f'<linearGradient id="fill{y}" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0%" stop-color="{colors[y]}" stop-opacity="0.32"/>'
+        f'<stop offset="100%" stop-color="{colors[y]}" stop-opacity="0.02"/></linearGradient>'
+        for y in years
+    )
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Daily GitHub contributions for {USER}, {aria}; peak {peak} in one day.">
   <defs>
     <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{C_PURPLE}"/>
       <stop offset="100%" stop-color="{C_CYAN}"/>
     </linearGradient>
-    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="{C_PURPLE}" stop-opacity="0.45"/>
-      <stop offset="60%" stop-color="{C_CYAN}" stop-opacity="0.16"/>
-      <stop offset="100%" stop-color="{C_CYAN}" stop-opacity="0.03"/>
-    </linearGradient>
+    {fills}
     <filter id="glow" x="-5%" y="-20%" width="110%" height="140%">
       <feGaussianBlur stdDeviation="3"/>
     </filter>
@@ -272,11 +246,10 @@ def build(series):
       <stop offset="0%" stop-color="{C_CYAN}" stop-opacity="0.14"/>
       <stop offset="100%" stop-color="{C_CYAN}" stop-opacity="0"/>
     </radialGradient>
-    <clipPath id="card"><rect width="{W}" height="{H}" rx="16"/></clipPath>
-    <path id="ln" d="{line}"/>
+    <clipPath id="card"><rect width="{W}" height="{H}" rx="18"/></clipPath>
   </defs>
 
-  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="16" fill="{C_BG}" stroke="url(#stroke)" stroke-width="1.5"/>
+  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="{C_BG}" stroke="url(#stroke)" stroke-width="1.5"/>
   <g clip-path="url(#card)">
     <rect width="{W}" height="{H}" fill="url(#glowL)"/>
     <rect width="{W}" height="{H}" fill="url(#glowR)"/>
@@ -285,20 +258,15 @@ def build(series):
     {waves(W + 20, H - 22, C_CYAN, True)}
   </g>
 
-  <text x="{L - 12}" y="40" font-family="{FONT}" font-size="16" font-weight="600" fill="{C_FG}">Contributions &#8212; {heading}</text>
-  <text x="{L - 12}" y="60" font-family="{FONT}" font-size="11.5" fill="{C_MUTED}">Daily GitHub activity</text>
-  {pills}
+  <text x="{L - 12}" y="40" font-family="{FONT}" font-size="16" font-weight="600" fill="{C_FG}">Contributions &#8212; {title}</text>
+  <text x="{L - 12}" y="60" font-family="{FONT}" font-size="11.5" fill="{C_MUTED}">Daily GitHub activity, Jan&#8211;Dec</text>
 
   {nl.join(grid)}
-
-  <g clip-path="url(#plot)" fill="none" stroke="url(#stroke)" stroke-linejoin="round" stroke-linecap="round">
-    <path d="{area}" fill="url(#fill)" stroke="none"/>
-    <use href="#ln" stroke-width="5" stroke-opacity="0.35" filter="url(#glow)"/>
-    <use href="#ln" stroke-width="1.8"/>
-  </g>
-  {peak_mark}
-
   {nl.join(xlab)}
+
+  {nl.join(series_svg)}
+
+  {nl.join(legend)}
 </svg>
 '''
 
@@ -459,18 +427,23 @@ def build_streak(st):
 </svg>
 '''
 
+
+
 if __name__ == "__main__":
+    today = datetime.now(timezone.utc).date()
+    years = [today.year - 1, today.year]
+
     if "--demo" in sys.argv:
-        series = demo()
+        data = demo(years, today)
         print("Demoläge — inga API-anrop.")
     else:
         if not TOKEN:
             print("Ingen token satt (GH_GRAPHQL_TOKEN eller GITHUB_TOKEN).",
                   file=sys.stderr)
             sys.exit(1)
-        print(f"Hämtar bidrag för {USER} ...")
+        print(f"Hämtar bidrag för {USER} ({years[0]} + {years[1]}) ...")
         try:
-            series = fetch()
+            data = {y: fetch_year(y, today) for y in years}
         except (urllib.error.HTTPError, RuntimeError) as e:
             print(f"Misslyckades: {e}\n"
                   f"Tips: GITHUB_TOKEN saknar ofta behörighet för "
@@ -478,11 +451,15 @@ if __name__ == "__main__":
                   f"read:user och skicka in som GH_GRAPHQL_TOKEN.",
                   file=sys.stderr)
             sys.exit(1)
-        print(f"  {len(series)} dagar, {sum(c for _, c in series)} bidrag")
+        for y in years:
+            print(f"  {y}: {len(data[y])} dagar, {sum(c for _, c in data[y])} bidrag")
 
-    OUT.write_text(build(series), encoding="utf-8")
+    OUT.write_text(build(data), encoding="utf-8")
     print(f"Skrev {OUT} ({OUT.stat().st_size} bytes)")
 
+    # Streak-kortet använder de senaste DAYS dagarna ur samma data —
+    # två kalenderår täcker alltid minst 365 dagar bakåt.
+    series = (data[years[0]] + data[years[1]])[-DAYS:]
     st = streaks(series)
     STREAK_OUT.write_text(build_streak(st), encoding="utf-8")
     print(f"Skrev {STREAK_OUT} — total {st['total']}, "
