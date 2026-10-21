@@ -130,7 +130,7 @@ public class Developer {
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>📚📖 Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
+      <h3>🐬🍃 Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
       <p><em>Java · JavaFX · MySQL / MongoDB</em></p>
       <p>Library management client built twice — against MySQL with prepared statements and against MongoDB — same MVC architecture with an interface-driven data layer, book search, author and genre browsing and ratings. The MongoDB variant adds login and text reviews.</p>
       <p>
