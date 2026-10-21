@@ -27,7 +27,6 @@ from pathlib import Path
 USER = os.environ.get("STATS_USER", "IbrahimAwad98")
 TOKEN = os.environ.get("GH_GRAPHQL_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
 OUT = Path(__file__).parent / "activity.svg"
-DAYS = int(os.environ.get("ACTIVITY_DAYS", "365"))   # fönster för streak-kortet
 
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
@@ -373,7 +372,7 @@ def build_streak(st):
             )
         return "".join(out)
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Contribution streaks: {st['total']} contributions in the last 12 months, current streak {st['current']} days, longest streak {st['longest']} days">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Contribution streaks: {st['total']} contributions since {st['first']}, current streak {st['current']} days, longest streak {st['longest']} days">
   <defs>
     <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="{C_PURPLE}"/>
@@ -457,9 +456,8 @@ if __name__ == "__main__":
     OUT.write_text(build(data), encoding="utf-8")
     print(f"Skrev {OUT} ({OUT.stat().st_size} bytes)")
 
-    # Streak-kortet använder de senaste DAYS dagarna ur samma data —
-    # två kalenderår täcker alltid minst 365 dagar bakåt.
-    series = (data[years[0]] + data[years[1]])[-DAYS:]
+    # Streak-kortet summerar hela perioden, 1 jan förra året till idag.
+    series = data[years[0]] + data[years[1]]
     st = streaks(series)
     STREAK_OUT.write_text(build_streak(st), encoding="utf-8")
     print(f"Skrev {STREAK_OUT} — total {st['total']}, "
