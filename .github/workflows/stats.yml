@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: stats-card
+  cancel-in-progress: false   # köa i stället för att två körningar pushar samtidigt
+
 jobs:
   stats:
     runs-on: ubuntu-latest
