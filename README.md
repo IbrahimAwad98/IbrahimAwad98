@@ -108,7 +108,7 @@ public class Developer {
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🏎️💨 <a href="https://github.com/IbrahimAwad98/Road-Rumble">Road Rumble</a></h3>
+      <h3><a href="https://github.com/IbrahimAwad98/Road-Rumble">Road Rumble</a></h3>
       <p><em>C · SDL2 · UDP Networking</em></p>
       <p>Multiplayer racing for up to four players — fixed-size state packets over UDP via SDL_net, with a central server relaying player state. Built in a six-person SCRUM team, with CI building on Ubuntu and macOS.</p>
       <p>
@@ -118,7 +118,7 @@ public class Developer {
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🌤️ <a href="https://github.com/IbrahimAwad98/Weather-App-via-React">Weather App</a></h3>
+      <h3><a href="https://github.com/IbrahimAwad98/Weather-App-via-React">Weather App</a></h3>
       <p><em>Next.js · React · TypeScript</em></p>
       <p>Weather application fetching live OpenWeatherMap data — city search with current temperature, wind and humidity, and explicit error states rather than silent failures.</p>
       <p>
@@ -130,7 +130,7 @@ public class Developer {
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🐬🍃 Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
+      <h3>Library Systems (<a href="https://github.com/IbrahimAwad98/LibraryMySQL">MySQL</a> · <a href="https://github.com/IbrahimAwad98/LibraryMongoDB">MongoDB</a>)</h3>
       <p><em>Java · JavaFX · MySQL / MongoDB</em></p>
       <p>Library management client built twice — against MySQL with prepared statements and against MongoDB — same MVC architecture with an interface-driven data layer, book search, author and genre browsing and ratings. The MongoDB variant adds login and text reviews.</p>
       <p>
@@ -140,7 +140,7 @@ public class Developer {
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>📟 <a href="https://github.com/IbrahimAwad98/riscv-baremetal">RISC-V Bare-Metal</a></h3>
+      <h3><a href="https://github.com/IbrahimAwad98/riscv-baremetal">RISC-V Bare-Metal</a></h3>
       <p><em>C · Assembly</em></p>
       <p>Bare-metal programming on the GD32VF103 microcontroller: GPIO, ADC, PWM, DAC and LCD drivers written from the register level up, plus RISC-V assembly labs.</p>
       <p>
@@ -152,7 +152,7 @@ public class Developer {
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3></>♨️ <a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
+      <h3></><a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
       <p><em>Java</em></p>
       <p>Data structures and algorithms implemented from scratch — BST, linked lists, stacks and queues, five sorting algorithms, expression evaluation, and backtracking solvers for mazes and puzzle problems.</p>
       <p>
@@ -161,7 +161,7 @@ public class Developer {
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🛢️ <a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
+      <h3><a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
       <p><em>MySQL · ER Modeling</em></p>
       <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
       <p>
