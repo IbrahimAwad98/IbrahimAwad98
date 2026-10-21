@@ -152,7 +152,7 @@ public class Developer {
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3></>♨️<a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
+      <h3></>♨️ <a href="https://github.com/IbrahimAwad98/Algorithms-and-data-structure">Algorithms &amp; Data Structures</a></h3>
       <p><em>Java</em></p>
       <p>Data structures and algorithms implemented from scratch — BST, linked lists, stacks and queues, five sorting algorithms, expression evaluation, and backtracking solvers for mazes and puzzle problems.</p>
       <p>
