@@ -51,7 +51,7 @@ def collect():
 
     langs = {}
     for r in repos:
-        if r["fork"] or r["archived"]:
+        if r["fork"] or r["archived"] or r["name"] in SKIP_REPOS:
             continue
         try:
             for lang, byts in api(f"/repos/{USER}/{r['name']}/languages").items():
@@ -65,6 +65,7 @@ def collect():
 
 TOP = 12                                  # 3 kolumner × 4 rader
 SKIP = {"Makefile", "Batchfile", "Shell"}  # byggskript, inte språk
+SKIP_REPOS = {"C-programming"}             # 1,7 MB kursövningar som annars dominerar kortet
 
 
 DEMO = {
