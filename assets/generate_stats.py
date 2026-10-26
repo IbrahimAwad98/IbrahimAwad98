@@ -23,7 +23,8 @@ ACCENT, ACCENT2, BORDER = "#7C3AED", "#22D3EE", "#21262D"
 FONT = "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 # Palett efter rang (störst språk först), inte per språk
-PALETTE = ["#4AD5ED", "#A68CF8", "#ED6FB5", "#F6BD36", "#50D49A", "#6AA7F8"]
+PALETTE = ["#4AD5ED", "#A68CF8", "#ED6FB5", "#F6BD36", "#50D49A", "#6AA7F8",
+           "#FB923C", "#34D399", "#F472B6", "#FACC15", "#60A5FA", "#C084FC"]
 
 
 def api(path):
@@ -58,7 +59,12 @@ def collect():
         except Exception as e:              # ett trasigt repo får inte fälla hela körningen
             print(f"  hoppar över {r['name']}: {e}", file=sys.stderr)
 
-    return {"langs": dict(sorted(langs.items(), key=lambda kv: -kv[1])[:6])}
+    langs = {k: v for k, v in langs.items() if k not in SKIP}
+    return {"langs": dict(sorted(langs.items(), key=lambda kv: -kv[1])[:TOP])}
+
+
+TOP = 12                                  # 3 kolumner × 4 rader
+SKIP = {"Makefile", "Batchfile", "Shell"}  # byggskript, inte språk
 
 
 DEMO = {
@@ -111,10 +117,11 @@ def esc(s):
 
 
 def build(d):
-    W, H = 880, 186
+    langs = list(d["langs"].items())
+    rows = max(1, -(-len(langs) // 3))
+    W, H = 880, 122 + rows * 32           # 2 rader → 186, 4 rader → 250
     X, BW = 30, W - 60
     total = sum(d["langs"].values()) or 1
-    langs = list(d["langs"].items())
 
     def color_of(i, lang):
         return LANG_COLORS.get(lang, PALETTE[i % len(PALETTE)])
