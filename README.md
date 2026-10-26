@@ -161,13 +161,13 @@ public class Developer {
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/IbrahimAwad98/Database">Database Design</a></h3>
-      <p><em>MySQL · ER Modeling</em></p>
-      <p>Normalized MySQL schema for a library system — junction tables for M:N relations, cascading foreign keys and a full ER diagram.</p>
+      <h3><a href="https://github.com/IbrahimAwad98/tv-dashboard">TV Dashboard</a></h3>
+      <p><em>JavaScript · Tizen · Web APIs</em></p>
+      <p>Smart home dashboard for older Samsung Tizen TVs — clock, weather, live SL departures and a tuner window via the Tizen TVWindow API. Plain ES5 for Chromium 47, no backend, no build step, with a PowerShell script that packages, signs and installs the app.</p>
       <p>
-        <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
-        <img src="https://img.shields.io/badge/SQL-6366F1?style=flat-square" alt="SQL" />
-        <img src="https://img.shields.io/badge/ER%20Diagram-7C3AED?style=flat-square" alt="ER Diagram" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+        <img src="https://img.shields.io/badge/Tizen-1C4A87?style=flat-square&logo=samsung&logoColor=white" alt="Tizen" />
+        <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell" />
       </p>
     </td>
   </tr>
