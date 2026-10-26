@@ -5,6 +5,7 @@ on:
     - cron: '17 4 * * *'      # varje dygn 04:17 UTC
   workflow_dispatch:           # gör att du kan köra manuellt från Actions-fliken
   push:
+    branches: [main]           # inte på feature-branches, de kan ändå inte committa tillbaka
     paths:
       - 'assets/generate_stats.py'
       - 'assets/generate_activity.py'
